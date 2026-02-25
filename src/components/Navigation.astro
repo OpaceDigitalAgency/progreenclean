@@ -6,7 +6,7 @@ const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about/' },
   { label: 'Services', href: '/services/', children: services.map(s => ({ label: s.title, href: `/services/${s.slug}/` })) },
-  { label: 'Pricing & Quote', href: '/quote/' },
+  { label: 'Pricing', href: '/quote/' },
   { label: 'Reviews', href: '/reviews/' },
   { label: 'Blog', href: '/blog/' },
   { label: 'Contact', href: '/contact/' },
@@ -21,10 +21,9 @@ const navLinks = [
       {navLinks.map((link) => (
         <div class="relative group">
           <a href={link.href}
-             class={`font-heading font-semibold text-sm tracking-wide transition-colors hover:text-primary focus:text-primary focus:outline-2 focus:outline-primary ${currentPath === link.href ? 'text-primary' : 'text-navy'}`}
+             class={`font-heading font-semibold text-sm tracking-wide transition-colors hover:text-primary focus:text-primary focus:outline-2 focus:outline-primary ${currentPath === link.href ? 'text-primary border-b-2 border-primary pb-0.5' : 'text-navy'}`}
              aria-current={currentPath === link.href ? 'page' : undefined}>
             {link.label}
-            {link.children && <span class="material-symbols-rounded text-base align-middle ml-0.5">expand_more</span>}
           </a>
           {link.children && (
             <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 z-50">
@@ -41,8 +40,12 @@ const navLinks = [
       ))}
     </nav>
     <div class="hidden lg:flex items-center gap-4">
-      <a href="tel:01372898732" class="font-heading font-semibold text-navy text-sm hover:text-primary transition-colors">
-        <span class="material-symbols-rounded align-middle mr-1 text-primary">phone</span>01372 898732
+      <a href="tel:01372898732" class="flex items-center gap-2 hover:text-primary transition-colors group">
+        <span class="material-symbols-rounded text-2xl text-primary">phone</span>
+        <div class="flex flex-col leading-tight">
+          <span class="font-heading text-xs text-navy/60 font-semibold tracking-wide">Epsom, Surrey</span>
+          <span class="font-heading font-bold text-navy text-sm group-hover:text-primary transition-colors">01372 898732</span>
+        </div>
       </a>
       <a href="/quote/" class="inline-block bg-accent hover:bg-accent-dark text-white font-heading font-bold text-sm px-6 py-3 rounded-full transition-colors focus:outline-2 focus:outline-accent focus:outline-offset-2">
         Get Quote
