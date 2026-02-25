@@ -6,14 +6,14 @@ const steps = [
   { number: '4', icon: 'thumb_up', title: 'You Relax', description: 'Sit back and enjoy the results. Not happy? We come back and put it right — free of charge.' },
 ];
 ---
-<section class="py-16 lg:py-20 bg-off-white">
+<section class="py-16 lg:py-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
     <h2 class="font-heading font-bold text-3xl text-navy text-center mb-4">How It Works</h2>
     <p class="text-navy/60 text-center mb-12 max-w-2xl mx-auto">Getting your property cleaned is straightforward. Here is our simple four-step process.</p>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {steps.map((step) => (
-        <div class="relative text-center">
-          <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 text-2xl font-heading font-bold shadow-lg shadow-primary/25">
+        <div class="relative text-center group">
+          <div class="w-18 h-18 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 text-2xl font-heading font-bold shadow-lg shadow-primary/25 group-hover:scale-110 transition-transform">
             {step.number}
           </div>
           <h3 class="font-heading font-bold text-lg text-navy mb-2">{step.title}</h3>

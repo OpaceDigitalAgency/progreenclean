@@ -3,6 +3,7 @@ import SiteLayout from '../../layouts/SiteLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import FaqAccordion from '../../components/FaqAccordion.astro';
 import CtaBanner from '../../components/CtaBanner.astro';
+import ServiceIcon from '../../components/ServiceIcon.astro';
 import { generateServiceSchema, generateFaqSchema } from '../../utils/seo.js';
 import services from '../../data/services.json';
 
@@ -23,8 +24,8 @@ const faqSchema = generateFaqSchema(service.faqs);
     <div class="absolute inset-0 bg-gradient-to-br from-aqua-light via-white to-off-white -z-10"></div>
     <div class="max-w-7xl mx-auto px-4 lg:px-8">
       <div class="max-w-3xl">
-        <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-          <span class="material-symbols-rounded text-4xl text-primary">{service.icon}</span>
+        <div class="mb-6">
+          <ServiceIcon slug={service.slug} size="w-20 h-20" />
         </div>
         <h1 class="font-heading font-extrabold text-4xl md:text-5xl text-navy leading-tight mb-4">{service.title}</h1>
         <p class="text-lg text-navy/70 mb-6 leading-relaxed">{service.longDescription}</p>

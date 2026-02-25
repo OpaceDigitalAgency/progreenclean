@@ -1,0 +1,27 @@
+---
+interface Props {
+  variant?: 'teal-to-white' | 'white-to-teal' | 'teal-to-off-white' | 'off-white-to-white' | 'white-to-off-white';
+  flip?: boolean;
+}
+
+const { variant = 'teal-to-white', flip = false } = Astro.props;
+
+const colourSets: Record<string, { c1: string; c2: string; c3: string; c4: string }> = {
+  'teal-to-white': { c1: '#00A99D15', c2: '#00A99D30', c3: '#E0F7F5', c4: '#F7FAF9' },
+  'white-to-teal': { c1: '#F7FAF920', c2: '#E0F7F540', c3: '#E0F7F5', c4: '#00A99D10' },
+  'teal-to-off-white': { c1: '#00A99D12', c2: '#00A99D25', c3: '#E0F7F5', c4: '#F7FAF9' },
+  'off-white-to-white': { c1: '#00A99D08', c2: '#00A99D18', c3: '#E0F7F5', c4: '#FFFFFF' },
+  'white-to-off-white': { c1: '#00A99D08', c2: '#00A99D15', c3: '#EDF6F5', c4: '#F7FAF9' },
+};
+
+const c = colourSets[variant];
+---
+<div class={`w-full overflow-hidden leading-none ${flip ? 'transform rotate-180' : ''}`} aria-hidden="true">
+  <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full block" preserveAspectRatio="none" style="height: 80px;">
+    <path d="M0,60 C180,100 360,20 540,50 C720,80 900,100 1080,60 C1200,35 1350,55 1440,45 L1440,120 L0,120 Z" fill={c.c1}/>
+    <path d="M0,75 C200,105 400,45 600,70 C800,95 1000,105 1200,70 C1320,50 1400,65 1440,60 L1440,120 L0,120 Z" fill={c.c2}/>
+    <path d="M0,90 C240,110 480,70 720,85 C960,100 1100,110 1260,90 C1360,78 1420,88 1440,85 L1440,120 L0,120 Z" fill={c.c3}/>
+    <path d="M0,105 C300,120 600,95 900,108 C1100,115 1300,120 1440,110 L1440,120 L0,120 Z" fill={c.c4}/>
+  </svg>
+</div>
+
