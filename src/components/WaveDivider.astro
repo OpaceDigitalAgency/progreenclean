@@ -6,15 +6,23 @@ interface Props {
 
 const { variant = 'teal-to-white', flip = false } = Astro.props;
 
-const colourSets: Record<string, { c1: string }> = {
-  'teal-to-white': { c1: '#dfedea' },
-  'white-to-teal': { c1: '#dfedea' },
-  'teal-to-off-white': { c1: '#dfedea' },
-  'off-white-to-white': { c1: '#dfedea' },
-  'white-to-off-white': { c1: '#dfedea' },
+const colourSets: Record<string, { from: string; to: string }> = {
+  'teal-to-white': { from: '#dfedea', to: '#ffffff' },
+  'white-to-teal': { from: '#ffffff', to: '#dfedea' },
+  'teal-to-off-white': { from: '#dfedea', to: '#f5f5f5' },
+  'off-white-to-white': { from: '#f5f5f5', to: '#ffffff' },
+  'white-to-off-white': { from: '#ffffff', to: '#f5f5f5' },
 };
 
 const c = colourSets[variant];
 ---
-<div class={`w-full leading-none ${flip ? 'transform rotate-180' : ''}`} style={`background-color: ${c.c1}; height: 60px;`} aria-hidden="true"></div>
+<svg class={`w-full h-auto ${flip ? 'transform scale-y-[-1]' : ''}`} viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id={`wave-gradient-${variant}`} x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style={`stop-color: ${c.from}; stop-opacity: 1`} />
+      <stop offset="100%" style={`stop-color: ${c.to}; stop-opacity: 1`} />
+    </linearGradient>
+  </defs>
+  <path d="M0,40 Q300,0 600,40 T1200,40 L1200,120 L0,120 Z" fill={`url(#wave-gradient-${variant})`} />
+</svg>
 
