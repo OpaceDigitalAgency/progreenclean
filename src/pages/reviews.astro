@@ -13,6 +13,12 @@ const sourceIcons: Record<string, string> = {
   Google: "🔴",
 };
 
+const sourceLinks: Record<string, string> = {
+  Yell: "https://www.yell.com/biz/progreen-clean-ltd-epsom-11065244/",
+  Checkatrade: "https://www.checkatrade.com/trades/progreencleanltd",
+  Facebook: "https://www.facebook.com/ProGreenClean/",
+};
+
 const totalRating = reviews.reduce((sum, r) => sum + r.rating, 0);
 const avgRating = (totalRating / reviews.length).toFixed(1);
 
@@ -23,6 +29,11 @@ function formatDate(dateStr: string) {
     year: "numeric",
   });
 }
+
+const platformCounts = ["Yell", "Checkatrade", "Facebook"].map((src) => ({
+  src,
+  count: reviews.filter((r) => r.source === src).length,
+}));
 ---
 
 <SiteLayout
@@ -61,6 +72,7 @@ function formatDate(dateStr: string) {
                 <svg
                   class="w-6 h-6 text-yellow-400 fill-current"
                   viewBox="0 0 20 20"
+                  aria-hidden="true"
                 >
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
@@ -71,37 +83,48 @@ function formatDate(dateStr: string) {
             {reviews.length} verified reviews across multiple platforms
           </p>
         </div>
-        <div class="grid grid-cols-3 gap-4">
+        <div class="flex gap-4">
           {
-            ["Yell", "Checkatrade", "Facebook"].map((src) => {
-              const count = reviews.filter((r) => r.source === src).length;
-              return (
-                <div class="bg-[#dfedea] rounded-xl p-4 text-center min-w-[90px]">
-                  <p class="text-2xl mb-1">{sourceIcons[src]}</p>
-                  <p class="font-heading font-bold text-navy text-sm">{src}</p>
-                  <p class="text-navy/50 text-xs">
-                    {count} review{count !== 1 ? "s" : ""}
-                  </p>
-                </div>
-              );
-            })
+            platformCounts.map(({ src, count }) => (
+              <a
+                href={sourceLinks[src] ?? "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-[#dfedea] hover:bg-primary/10 rounded-xl p-4 text-center min-w-[90px] transition-colors group"
+              >
+                <p class="text-2xl mb-1">{sourceIcons[src]}</p>
+                <p class="font-heading font-bold text-navy text-sm group-hover:text-primary transition-colors">
+                  {src}
+                </p>
+                <p class="text-navy/50 text-xs">
+                  {count} review{count !== 1 ? "s" : ""}
+                </p>
+              </a>
+            ))
           }
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div
+        class="columns-1 sm:columns-2 lg:columns-3 gap-6 [column-fill:_balance]"
+      >
         {
           reviews.map((r) => (
-            <article class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col">
+            <article class="break-inside-avoid mb-6 bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
               <div class="flex items-start justify-between gap-3 mb-4">
                 <div class="w-11 h-11 rounded-full bg-[#dfedea] flex items-center justify-center shrink-0">
                   <span class="font-heading font-bold text-primary text-lg">
                     {r.name.charAt(0)}
                   </span>
                 </div>
-                <span class="text-xs font-medium text-navy/40 bg-gray-50 px-2 py-1 rounded-full whitespace-nowrap">
+                <a
+                  href={sourceLinks[r.source] ?? "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-xs font-medium text-navy/40 hover:text-navy/70 bg-gray-50 hover:bg-gray-100 px-2 py-1 rounded-full whitespace-nowrap transition-colors"
+                >
                   {sourceIcons[r.source]} {r.source}
-                </span>
+                </a>
               </div>
               <div class="flex gap-0.5 mb-3">
                 {Array.from({ length: r.rating }).map(() => (
@@ -119,7 +142,7 @@ function formatDate(dateStr: string) {
                   {r.title}
                 </h3>
               )}
-              <blockquote class="text-navy/60 text-sm leading-relaxed flex-1 mb-4">
+              <blockquote class="text-navy/60 text-sm leading-relaxed mb-4">
                 "{r.body}"
               </blockquote>
               <div class="flex items-center justify-between pt-4 border-t border-gray-100">
@@ -153,7 +176,7 @@ function formatDate(dateStr: string) {
         </div>
         <div class="flex flex-col sm:flex-row gap-3 shrink-0">
           <a
-            href="https://www.yell.com/biz/progreen-clean-ltd-epsom-11065244/"
+            href={sourceLinks.Yell}
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center gap-2 bg-[#FFCC00] hover:bg-yellow-300 text-black font-heading font-bold px-6 py-3 rounded-full transition-all shadow-md"
@@ -161,7 +184,7 @@ function formatDate(dateStr: string) {
             🟡 Review on Yell
           </a>
           <a
-            href="https://www.checkatrade.com/trades/progreencleanltd"
+            href={sourceLinks.Checkatrade}
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center gap-2 bg-[#00973A] hover:bg-green-700 text-white font-heading font-bold px-6 py-3 rounded-full transition-all shadow-md"

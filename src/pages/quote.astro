@@ -3,7 +3,6 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import WaveDivider from "../components/WaveDivider.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
-import FormShell from "../components/forms/FormShell.astro";
 import services from "../data/services.json";
 ---
 
@@ -13,173 +12,421 @@ import services from "../data/services.json";
 >
   <PageHero
     headline="Get Your <span class='text-primary'>Free Quote</span>"
-    subheadline="Tell us what you need and we will get back to you with a clear price — no hidden extras, no obligation."
+    subheadline="Tell us a little about your property and we will come back with a clear, honest price — no hidden extras, no obligation."
   />
   <WaveDivider variant="teal-to-white" />
   <Breadcrumbs items={[{ name: "Home", url: "/" }, { name: "Get a Quote" }]} />
-  <section class="py-12 lg:py-16 bg-white">
-    <div class="max-w-3xl mx-auto px-4 lg:px-8">
-      <FormShell
-        formName="Quote"
-        successMessage="Thanks for your enquiry! We will review the details and get back to you with a quote within 24 hours."
-      >
-        <fieldset class="space-y-4">
-          <legend class="font-heading font-bold text-xl text-navy mb-4"
-            >1. Which services do you need?</legend
+
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="mb-10">
+          <div
+            id="step-indicator"
+            class="flex items-center justify-between gap-2"
           >
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {
-              services.map((s) => (
-                <label class="flex items-center gap-3 bg-off-white rounded-xl p-3 cursor-pointer hover:bg-[#dfedea] transition-colors border border-gray-100">
-                  <input
-                    type="checkbox"
-                    name="services"
-                    value={s.title}
-                    class="w-5 h-5 rounded text-primary focus:ring-primary accent-primary"
-                  />
-                  <span class="text-sm font-semibold text-navy">{s.title}</span>
-                </label>
+              [
+                { n: 1, label: "Services" },
+                { n: 2, label: "Property" },
+                { n: 3, label: "Details" },
+                { n: 4, label: "Contact" },
+              ].map(({ n, label }) => (
+                <div class="flex-1 flex flex-col items-center gap-2">
+                  <div
+                    id={`step-dot-${n}`}
+                    class:list={[
+                      "w-10 h-10 rounded-full flex items-center justify-center font-heading font-bold text-sm transition-all duration-300",
+                      n === 1
+                        ? "bg-primary text-white shadow-lg shadow-primary/30"
+                        : "bg-gray-100 text-navy/40",
+                    ]}
+                  >
+                    {n}
+                  </div>
+                  <span
+                    id={`step-label-${n}`}
+                    class:list={[
+                      "text-xs font-semibold hidden sm:block transition-colors",
+                      n === 1 ? "text-primary" : "text-navy/40",
+                    ]}
+                  >
+                    {label}
+                  </span>
+                  {n < 4 && <div class="hidden sm:block absolute" />}
+                </div>
               ))
             }
           </div>
-        </fieldset>
-        <fieldset class="space-y-4">
-          <legend class="font-heading font-bold text-xl text-navy mb-4"
-            >2. Your property details</legend
+          <div
+            class="h-1 bg-gray-100 rounded-full mt-4 relative overflow-hidden"
           >
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label
-                for="property-type"
-                class="block text-sm font-semibold text-navy mb-1"
-                >Property type</label
-              >
-              <select
-                id="property-type"
-                name="property-type"
-                class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary bg-white"
-              >
-                <option value="">Select...</option>
-                <option>Flat / Apartment</option>
-                <option>Terraced house</option>
-                <option>Semi-detached house</option>
-                <option>Detached house</option>
-                <option>Bungalow</option>
-                <option>Commercial property</option>
-              </select>
-            </div>
-            <div>
-              <label
-                for="bedrooms"
-                class="block text-sm font-semibold text-navy mb-1"
-                >Number of bedrooms</label
-              >
-              <select
-                id="bedrooms"
-                name="bedrooms"
-                class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary bg-white"
-              >
-                <option value="">Select...</option>
-                <option>1</option><option>2</option><option>3</option><option
-                  >4</option
-                ><option>5+</option>
-              </select>
-            </div>
-          </div>
-          <div>
-            <label
-              for="postcode"
-              class="block text-sm font-semibold text-navy mb-1">Postcode</label
+            <div
+              id="progress-bar"
+              class="h-full bg-primary rounded-full transition-all duration-500"
+              style="width: 25%"
             >
-            <input
-              type="text"
-              id="postcode"
-              name="postcode"
-              placeholder="e.g. KT18 7NS"
-              class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary"
-              required
-            />
-          </div>
-        </fieldset>
-        <fieldset class="space-y-4">
-          <legend class="font-heading font-bold text-xl text-navy mb-4"
-            >3. Additional details</legend
-          >
-          <div>
-            <label
-              for="details"
-              class="block text-sm font-semibold text-navy mb-1"
-              >Anything else we should know?</label
-            >
-            <textarea
-              id="details"
-              name="details"
-              rows="4"
-              class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary"
-              placeholder="Tell us about access, specific areas, preferred dates..."
-            ></textarea>
-          </div>
-        </fieldset>
-        <fieldset class="space-y-4">
-          <legend class="font-heading font-bold text-xl text-navy mb-4"
-            >4. Your contact details</legend
-          >
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label
-                for="name"
-                class="block text-sm font-semibold text-navy mb-1"
-                >Full name</label
-              >
-              <input
-                type="text"
-                id="name"
-                name="name"
-                class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary"
-                required
-              />
-            </div>
-            <div>
-              <label
-                for="phone"
-                class="block text-sm font-semibold text-navy mb-1"
-                >Phone number</label
-              >
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary"
-                required
-              />
             </div>
           </div>
-          <div>
-            <label
-              for="email"
-              class="block text-sm font-semibold text-navy mb-1"
-              >Email address</label
-            >
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary"
-              required
-            />
-          </div>
-        </fieldset>
-        <button
-          type="submit"
-          class="w-full bg-primary hover:bg-primary-dark text-white font-heading font-bold px-8 py-4 rounded-full text-lg transition-colors shadow-lg shadow-primary/25 focus:outline-2 focus:outline-primary focus:outline-offset-2"
+        </div>
+
+        <form
+          id="quote-form"
+          name="Quote"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/quote/success/"
+          class="bg-white"
+          novalidate
         >
-          Request My Free Quote
-        </button>
-        <p class="text-center text-navy/40 text-xs">
-          We will respond within 24 hours. Your details are never shared with
-          third parties.
-        </p>
-      </FormShell>
+          <input type="hidden" name="form-name" value="Quote" />
+          <input type="hidden" name="bot-field" class="hidden" />
+
+          <div id="step-1" class="quote-step">
+            <div class="bg-[#dfedea] rounded-2xl p-8 lg:p-10 mb-8">
+              <h2 class="font-heading font-extrabold text-2xl text-navy mb-2">
+                Which services do you need?
+              </h2>
+              <p class="text-navy/60 text-sm mb-6">
+                Select all that apply — we will factor each one into your quote.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {
+                  services.map((s) => (
+                    <label class="service-checkbox flex items-center gap-3 bg-white rounded-xl p-4 cursor-pointer hover:bg-primary/5 transition-all border-2 border-transparent has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+                      <input
+                        type="checkbox"
+                        name="services"
+                        value={s.title}
+                        class="sr-only peer"
+                      />
+                      <div class="w-5 h-5 rounded border-2 border-gray-300 peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center shrink-0 transition-all">
+                        <svg
+                          class="w-3 h-3 text-white opacity-0 peer-checked:opacity-100 transition-opacity"
+                          fill="none"
+                          viewBox="0 0 12 10"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M1 5l3.5 3.5L11 1"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+                      <span class="text-sm font-semibold text-navy">
+                        {s.title}
+                      </span>
+                    </label>
+                  ))
+                }
+              </div>
+            </div>
+            <div class="flex justify-end">
+              <button
+                type="button"
+                onclick="nextStep(1)"
+                class="bg-accent hover:bg-accent-dark text-white font-heading font-bold px-10 py-4 rounded-full transition-all shadow-lg shadow-accent/30 hover:scale-105 inline-flex items-center gap-2"
+              >
+                Next: Property Details <span
+                  class="material-symbols-rounded text-xl">arrow_forward</span
+                >
+              </button>
+            </div>
+          </div>
+
+          <div id="step-2" class="quote-step hidden">
+            <div class="bg-[#dfedea] rounded-2xl p-8 lg:p-10 mb-8">
+              <h2 class="font-heading font-extrabold text-2xl text-navy mb-2">
+                Your property details
+              </h2>
+              <p class="text-navy/60 text-sm mb-6">
+                This helps us give you an accurate estimate.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    for="property-type"
+                    class="block text-sm font-bold text-navy mb-2"
+                    >Property type</label
+                  >
+                  <select
+                    id="property-type"
+                    name="property-type"
+                    class="w-full rounded-xl border-2 border-white bg-white px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+                    required
+                  >
+                    <option value="">Select...</option>
+                    <option>Flat / Apartment</option>
+                    <option>Terraced house</option>
+                    <option>Semi-detached house</option>
+                    <option>Detached house</option>
+                    <option>Bungalow</option>
+                    <option>Commercial property</option>
+                  </select>
+                </div>
+                <div>
+                  <label
+                    for="bedrooms"
+                    class="block text-sm font-bold text-navy mb-2"
+                    >Number of bedrooms</label
+                  >
+                  <select
+                    id="bedrooms"
+                    name="bedrooms"
+                    class="w-full rounded-xl border-2 border-white bg-white px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+                  >
+                    <option value="">Select...</option>
+                    <option>Studio</option>
+                    <option>1</option><option>2</option><option>3</option
+                    ><option>4</option><option>5+</option>
+                  </select>
+                </div>
+                <div class="sm:col-span-2">
+                  <label
+                    for="postcode"
+                    class="block text-sm font-bold text-navy mb-2"
+                    >Postcode <span class="text-accent">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="postcode"
+                    name="postcode"
+                    placeholder="e.g. KT18 7NS"
+                    class="w-full rounded-xl border-2 border-white bg-white px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-between">
+              <button
+                type="button"
+                onclick="prevStep(2)"
+                class="text-navy/50 hover:text-navy font-heading font-bold px-6 py-4 rounded-full transition-colors inline-flex items-center gap-2"
+              >
+                <span class="material-symbols-rounded text-xl">arrow_back</span> Back
+              </button>
+              <button
+                type="button"
+                onclick="nextStep(2)"
+                class="bg-accent hover:bg-accent-dark text-white font-heading font-bold px-10 py-4 rounded-full transition-all shadow-lg shadow-accent/30 hover:scale-105 inline-flex items-center gap-2"
+              >
+                Next: Additional Details <span
+                  class="material-symbols-rounded text-xl">arrow_forward</span
+                >
+              </button>
+            </div>
+          </div>
+
+          <div id="step-3" class="quote-step hidden">
+            <div class="bg-[#dfedea] rounded-2xl p-8 lg:p-10 mb-8">
+              <h2 class="font-heading font-extrabold text-2xl text-navy mb-2">
+                Anything else we should know?
+              </h2>
+              <p class="text-navy/60 text-sm mb-6">
+                Preferred dates, access notes, specific areas — anything that
+                helps us prepare.
+              </p>
+              <textarea
+                id="details"
+                name="details"
+                rows="6"
+                class="w-full rounded-xl border-2 border-white bg-white px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+                placeholder="e.g. Access via side gate, prefer mornings, need 3rd-floor windows done, available from 12 March..."
+              ></textarea>
+            </div>
+            <div class="flex justify-between">
+              <button
+                type="button"
+                onclick="prevStep(3)"
+                class="text-navy/50 hover:text-navy font-heading font-bold px-6 py-4 rounded-full transition-colors inline-flex items-center gap-2"
+              >
+                <span class="material-symbols-rounded text-xl">arrow_back</span> Back
+              </button>
+              <button
+                type="button"
+                onclick="nextStep(3)"
+                class="bg-accent hover:bg-accent-dark text-white font-heading font-bold px-10 py-4 rounded-full transition-all shadow-lg shadow-accent/30 hover:scale-105 inline-flex items-center gap-2"
+              >
+                Next: Your Details <span
+                  class="material-symbols-rounded text-xl">arrow_forward</span
+                >
+              </button>
+            </div>
+          </div>
+
+          <div id="step-4" class="quote-step hidden">
+            <div class="bg-[#dfedea] rounded-2xl p-8 lg:p-10 mb-8">
+              <h2 class="font-heading font-extrabold text-2xl text-navy mb-2">
+                Your contact details
+              </h2>
+              <p class="text-navy/60 text-sm mb-6">
+                We will use these to get back to you with your quote.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    for="name"
+                    class="block text-sm font-bold text-navy mb-2"
+                    >Full name <span class="text-accent">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="w-full rounded-xl border-2 border-white bg-white px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="phone"
+                    class="block text-sm font-bold text-navy mb-2"
+                    >Phone number <span class="text-accent">*</span></label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="w-full rounded-xl border-2 border-white bg-white px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+                    required
+                  />
+                </div>
+                <div class="sm:col-span-2">
+                  <label
+                    for="email"
+                    class="block text-sm font-bold text-navy mb-2"
+                    >Email address <span class="text-accent">*</span></label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="w-full rounded-xl border-2 border-white bg-white px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-between">
+              <button
+                type="button"
+                onclick="prevStep(4)"
+                class="text-navy/50 hover:text-navy font-heading font-bold px-6 py-4 rounded-full transition-colors inline-flex items-center gap-2"
+              >
+                <span class="material-symbols-rounded text-xl">arrow_back</span> Back
+              </button>
+              <button
+                type="submit"
+                class="bg-primary hover:bg-primary-dark text-white font-heading font-bold px-10 py-4 rounded-full text-lg transition-all shadow-lg shadow-primary/25 hover:scale-105 inline-flex items-center gap-2"
+              >
+                <span class="material-symbols-rounded text-xl">send</span> Request
+                My Free Quote
+              </button>
+            </div>
+            <p class="text-center text-navy/40 text-xs mt-6">
+              We will respond within 24 hours. Your details are never shared
+              with third parties.
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <div
+        class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto"
+      >
+        {
+          [
+            {
+              icon: "timer",
+              title: "Response within 24 hours",
+              body: "We review every enquiry personally and get back to you fast.",
+            },
+            {
+              icon: "lock",
+              title: "No obligation",
+              body: "A quote is just a quote. No pressure, no hard sell, ever.",
+            },
+            {
+              icon: "verified",
+              title: "Transparent pricing",
+              body: "No hidden costs. The price we quote is the price you pay.",
+            },
+          ].map(({ icon, title, body }) => (
+            <div class="flex items-start gap-4">
+              <div class="w-11 h-11 rounded-full bg-[#dfedea] flex items-center justify-center shrink-0">
+                <span class="material-symbols-rounded text-primary text-xl">
+                  {icon}
+                </span>
+              </div>
+              <div>
+                <p class="font-heading font-bold text-sm text-navy mb-1">
+                  {title}
+                </p>
+                <p class="text-navy/50 text-sm leading-relaxed">{body}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </section>
 </SiteLayout>
+
+<script>
+  const TOTAL_STEPS = 4;
+
+  function updateIndicators(current: number) {
+    for (let i = 1; i <= TOTAL_STEPS; i++) {
+      const dot = document.getElementById(`step-dot-${i}`);
+      const lbl = document.getElementById(`step-label-${i}`);
+      if (!dot || !lbl) continue;
+      if (i < current) {
+        dot.className =
+          "w-10 h-10 rounded-full flex items-center justify-center font-heading font-bold text-sm transition-all duration-300 bg-primary/30 text-primary";
+        lbl.className =
+          "text-xs font-semibold hidden sm:block transition-colors text-primary/60";
+        dot.innerHTML =
+          '<svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>';
+      } else if (i === current) {
+        dot.className =
+          "w-10 h-10 rounded-full flex items-center justify-center font-heading font-bold text-sm transition-all duration-300 bg-primary text-white shadow-lg";
+        dot.textContent = String(i);
+        lbl.className =
+          "text-xs font-semibold hidden sm:block transition-colors text-primary";
+      } else {
+        dot.className =
+          "w-10 h-10 rounded-full flex items-center justify-center font-heading font-bold text-sm transition-all duration-300 bg-gray-100 text-navy/40";
+        dot.textContent = String(i);
+        lbl.className =
+          "text-xs font-semibold hidden sm:block transition-colors text-navy/40";
+      }
+    }
+    const bar = document.getElementById("progress-bar");
+    if (bar) bar.style.width = `${(current / TOTAL_STEPS) * 100}%`;
+  }
+
+  (window as any).nextStep = function (current: number) {
+    const currentEl = document.getElementById(`step-${current}`);
+    const nextEl = document.getElementById(`step-${current + 1}`);
+    if (!currentEl || !nextEl) return;
+    currentEl.classList.add("hidden");
+    nextEl.classList.remove("hidden");
+    updateIndicators(current + 1);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  (window as any).prevStep = function (current: number) {
+    const currentEl = document.getElementById(`step-${current}`);
+    const prevEl = document.getElementById(`step-${current - 1}`);
+    if (!currentEl || !prevEl) return;
+    currentEl.classList.add("hidden");
+    prevEl.classList.remove("hidden");
+    updateIndicators(current - 1);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+</script>

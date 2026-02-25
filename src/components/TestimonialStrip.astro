@@ -1,6 +1,4 @@
 ---
-import type { Review } from "../data/reviews.json";
-
 interface Props {
   reviews: {
     id: string;
@@ -16,8 +14,18 @@ interface Props {
 }
 
 const { reviews, heading = "What Our Customers Say" } = Astro.props;
+const TRUNCATE_LEN = 140;
 
-const featured = reviews.slice(0, 3);
+const featured = reviews
+  .slice()
+  .sort((a, b) => {
+    const lenA = a.body.length;
+    const lenB = b.body.length;
+    const midA = Math.abs(lenA - 200);
+    const midB = Math.abs(lenB - 200);
+    return midA - midB;
+  })
+  .slice(0, 3);
 ---
 
 <section class="py-16 lg:py-20 bg-[#dfedea]">
@@ -30,35 +38,54 @@ const featured = reviews.slice(0, 3);
       </p>
       <h2 class="font-heading font-extrabold text-3xl text-navy">{heading}</h2>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
       {
-        featured.map((r) => (
-          <div class="bg-white rounded-2xl p-6 shadow-sm flex flex-col">
-            <div class="flex gap-0.5 mb-3">
-              {Array.from({ length: r.rating }).map(() => (
-                <svg
-                  class="w-4 h-4 text-yellow-400 fill-current"
-                  viewBox="0 0 20 20"
-                  aria-hidden="true"
-                >
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              ))}
-            </div>
-            <blockquote class="text-navy/70 text-sm leading-relaxed flex-1 mb-4">
-              "{r.body}"
-            </blockquote>
-            <div class="flex items-center justify-between pt-4 border-t border-gray-100">
-              <div>
-                <p class="font-heading font-bold text-sm text-navy">{r.name}</p>
-                <p class="text-navy/40 text-xs">{r.location}</p>
+        featured.map((r) => {
+          const isTruncated = r.body.length > TRUNCATE_LEN;
+          const truncated = isTruncated
+            ? r.body.slice(0, TRUNCATE_LEN).trimEnd() + "…"
+            : r.body;
+          return (
+            <div class="bg-white rounded-2xl p-6 shadow-sm flex flex-col">
+              <div class="flex gap-0.5 mb-3">
+                {Array.from({ length: r.rating }).map(() => (
+                  <svg
+                    class="w-4 h-4 text-yellow-400 fill-current"
+                    viewBox="0 0 20 20"
+                    aria-hidden="true"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
               </div>
-              <span class="text-xs text-navy/30 font-medium bg-gray-50 px-2 py-1 rounded-full">
-                {r.source}
-              </span>
+              <blockquote class="text-navy/70 text-sm leading-relaxed mb-3">
+                "{truncated}"
+              </blockquote>
+              {isTruncated && (
+                <a
+                  href="/reviews/"
+                  class="text-primary text-xs font-heading font-bold hover:underline mb-3 inline-flex items-center gap-1"
+                >
+                  Read more{" "}
+                  <span class="material-symbols-rounded text-sm">
+                    arrow_forward
+                  </span>
+                </a>
+              )}
+              <div class="flex items-center justify-between pt-4 border-t border-gray-100 mt-auto">
+                <div>
+                  <p class="font-heading font-bold text-sm text-navy">
+                    {r.name}
+                  </p>
+                  <p class="text-navy/40 text-xs">{r.location}</p>
+                </div>
+                <span class="text-xs text-navy/30 font-medium bg-gray-50 px-2 py-1 rounded-full">
+                  {r.source}
+                </span>
+              </div>
             </div>
-          </div>
-        ))
+          );
+        })
       }
     </div>
     <div class="text-center mt-8">
@@ -66,8 +93,8 @@ const featured = reviews.slice(0, 3);
         href="/reviews/"
         class="inline-flex items-center gap-2 text-primary font-heading font-bold text-sm hover:underline"
       >
-        Read all reviews <span class="material-symbols-rounded text-base"
-          >arrow_forward</span
+        Read all {reviews.length} reviews <span
+          class="material-symbols-rounded text-base">arrow_forward</span
         >
       </a>
     </div>
