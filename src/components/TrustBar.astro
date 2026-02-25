@@ -1,26 +1,42 @@
 ---
 const trustItems = [
-  'Reliability and Quality',
-  'Eco-Friendly Products',
-  'Fully Insured & DBS Checked',
-  'Local Epsom, Surrey Team',
-  'Flexible Scheduling',
-  'Satisfaction Guaranteed',
+  "Reliability and Quality",
+  "Eco-Friendly Products",
+  "Fully Insured & DBS Checked",
+  "Local Epsom, Surrey Team",
+  "Flexible Scheduling",
+  "Satisfaction Guaranteed",
 ];
 ---
-<section class="py-10">
-  <div class="max-w-7xl mx-auto px-4 lg:px-8">
-    <h2 class="font-heading font-bold text-2xl text-navy text-center mb-8">Why Choose Us</h2>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-6">
-      {trustItems.map((item) => (
+
+<div class="mt-14 pt-12 border-t border-navy/10">
+  <h2 class="font-heading font-bold text-2xl text-navy text-center mb-8">
+    Why Choose Us
+  </h2>
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-6">
+    {
+      trustItems.map((item) => (
         <div class="flex flex-col items-center gap-2 text-center">
           <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center shrink-0">
-            <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+            <svg
+              class="w-4 h-4 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="3"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
           </div>
-          <span class="font-heading font-semibold text-xs md:text-sm text-navy">{item}</span>
+          <span class="font-heading font-semibold text-xs md:text-sm text-navy">
+            {item}
+          </span>
         </div>
-      ))}
-    </div>
+      ))
+    }
   </div>
-</section>
-
+</div>

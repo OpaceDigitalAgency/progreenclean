@@ -1,16 +1,17 @@
 ---
-import SiteLayout from '../layouts/SiteLayout.astro';
-import HeroSection from '../components/HeroSection.astro';
-import ServiceCard from '../components/ServiceCard.astro';
-import TrustBar from '../components/TrustBar.astro';
-import CtaBanner from '../components/CtaBanner.astro';
-import ServiceAreaMap from '../components/ServiceAreaMap.astro';
-import WaveDivider from '../components/WaveDivider.astro';
-import services from '../data/services.json';
+import SiteLayout from "../layouts/SiteLayout.astro";
+import HeroSection from "../components/HeroSection.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import TrustBar from "../components/TrustBar.astro";
+import CtaBanner from "../components/CtaBanner.astro";
+import ServiceAreaMap from "../components/ServiceAreaMap.astro";
+import WaveDivider from "../components/WaveDivider.astro";
+import services from "../data/services.json";
 ---
+
 <SiteLayout>
   <HeroSection
-    headline="Professional Window &amp; Gutter<br />Cleaning in <span class='text-navy'>Epsom</span>"
+    headline="Professional Window & Gutter<br />Cleaning in <span class='text-navy'>Epsom</span>"
     subheadline="Fresh, reliable cleaning for homes and businesses across Epsom and Surrey. Fully insured, family-run, and trusted locally."
     ctaText="Get an Instant Quote"
     ctaHref="/quote/"
@@ -19,123 +20,347 @@ import services from '../data/services.json';
   />
   <section class="bg-[#dfedea] relative overflow-hidden py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-4 lg:px-8">
-      <h2 class="font-heading font-bold text-4xl text-navy text-center mb-6">Our Professional Services</h2>
-      <p class="text-navy/60 text-center mb-16 max-w-3xl mx-auto text-lg">From gleaming windows to spotless ovens, we handle every type of clean — domestic and commercial — across Epsom and the surrounding Surrey towns.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-        {services.slice(0, 9).map((s) => (
-          <ServiceCard title={s.title} slug={s.slug} icon={s.icon} description={s.description} />
-        ))}
+      <h2 class="font-heading font-bold text-4xl text-navy text-center mb-6">
+        Our Professional Services
+      </h2>
+      <p class="text-navy/60 text-center mb-16 max-w-3xl mx-auto text-lg">
+        From gleaming windows to spotless ovens, we handle every type of clean —
+        domestic and commercial — across Epsom and the surrounding Surrey towns.
+      </p>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+      >
+        {
+          services
+            .slice(0, 9)
+            .map((s) => (
+              <ServiceCard
+                title={s.title}
+                slug={s.slug}
+                icon={s.icon}
+                description={s.description}
+              />
+            ))
+        }
       </div>
       <div class="text-center mt-16">
-        <a href="/services/" class="inline-block bg-accent hover:bg-accent-dark text-white font-heading font-bold px-8 py-3 rounded-full transition-all shadow-md hover:shadow-lg hover:scale-105">
+        <a
+          href="/services/"
+          class="inline-block bg-accent hover:bg-accent-dark text-white font-heading font-bold px-8 py-3 rounded-full transition-all shadow-md hover:shadow-lg hover:scale-105"
+        >
           View All Services
         </a>
       </div>
-    </div>
-  </section>
-  <WaveDivider variant="teal-to-white" />
-  <section class="py-10 bg-white">
-    <TrustBar />
-  </section>
-  <WaveDivider variant="white-to-teal" />
-  <section class="py-16 lg:py-20 bg-[#dfedea]">
-    <div class="max-w-7xl mx-auto px-4 lg:px-8">
-      <h2 class="font-heading font-bold text-3xl text-navy text-center mb-12">How It Works</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="relative text-center group">
-          <div class="w-18 h-18 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 text-2xl font-heading font-bold shadow-lg shadow-primary/25 group-hover:scale-110 transition-transform">1</div>
-          <h3 class="font-heading font-bold text-lg text-navy mb-2">Get in Touch</h3>
-          <p class="text-navy/60 text-sm leading-relaxed">Call us or fill out our quick online form. We will respond within 24 hours.</p>
-        </div>
-        <div class="relative text-center group">
-          <div class="w-18 h-18 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 text-2xl font-heading font-bold shadow-lg shadow-primary/25 group-hover:scale-110 transition-transform">2</div>
-          <h3 class="font-heading font-bold text-lg text-navy mb-2">Free Quote</h3>
-          <p class="text-navy/60 text-sm leading-relaxed">We will provide a transparent, no-obligation quote based on your specific needs.</p>
-        </div>
-        <div class="relative text-center group">
-          <div class="w-18 h-18 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 text-2xl font-heading font-bold shadow-lg shadow-primary/25 group-hover:scale-110 transition-transform">3</div>
-          <h3 class="font-heading font-bold text-lg text-navy mb-2">Schedule Service</h3>
-          <p class="text-navy/60 text-sm leading-relaxed">Pick a date and time that works for you. We are flexible and reliable.</p>
-        </div>
-        <div class="relative text-center group">
-          <div class="w-18 h-18 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 text-2xl font-heading font-bold shadow-lg shadow-primary/25 group-hover:scale-110 transition-transform">4</div>
-          <h3 class="font-heading font-bold text-lg text-navy mb-2">Enjoy Results</h3>
-          <p class="text-navy/60 text-sm leading-relaxed">We arrive on time, do the job right, and leave you with a sparkling clean property.</p>
-        </div>
-      </div>
+      <TrustBar />
     </div>
   </section>
   <WaveDivider variant="teal-to-white" />
   <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl text-navy text-center mb-12">
+        How It Works
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="relative text-center group">
+          <div
+            class="w-18 h-18 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 text-2xl font-heading font-bold shadow-lg shadow-primary/25 group-hover:scale-110 transition-transform"
+          >
+            1
+          </div>
+          <h3 class="font-heading font-bold text-lg text-navy mb-2">
+            Get in Touch
+          </h3>
+          <p class="text-navy/60 text-sm leading-relaxed">
+            Call us or fill out our quick online form. We will respond within 24
+            hours.
+          </p>
+        </div>
+        <div class="relative text-center group">
+          <div
+            class="w-18 h-18 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 text-2xl font-heading font-bold shadow-lg shadow-primary/25 group-hover:scale-110 transition-transform"
+          >
+            2
+          </div>
+          <h3 class="font-heading font-bold text-lg text-navy mb-2">
+            Free Quote
+          </h3>
+          <p class="text-navy/60 text-sm leading-relaxed">
+            We will provide a transparent, no-obligation quote based on your
+            specific needs.
+          </p>
+        </div>
+        <div class="relative text-center group">
+          <div
+            class="w-18 h-18 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 text-2xl font-heading font-bold shadow-lg shadow-primary/25 group-hover:scale-110 transition-transform"
+          >
+            3
+          </div>
+          <h3 class="font-heading font-bold text-lg text-navy mb-2">
+            Schedule Service
+          </h3>
+          <p class="text-navy/60 text-sm leading-relaxed">
+            Pick a date and time that works for you. We are flexible and
+            reliable.
+          </p>
+        </div>
+        <div class="relative text-center group">
+          <div
+            class="w-18 h-18 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 text-2xl font-heading font-bold shadow-lg shadow-primary/25 group-hover:scale-110 transition-transform"
+          >
+            4
+          </div>
+          <h3 class="font-heading font-bold text-lg text-navy mb-2">
+            Enjoy Results
+          </h3>
+          <p class="text-navy/60 text-sm leading-relaxed">
+            We arrive on time, do the job right, and leave you with a sparkling
+            clean property.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <WaveDivider variant="white-to-teal" />
+  <section class="py-16 lg:py-20 bg-[#dfedea]">
     <div class="max-w-7xl mx-auto px-4 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 class="font-heading font-bold text-3xl text-navy mb-4">Who We Are</h2>
-          <p class="text-navy/70 leading-relaxed mb-4">ProGreen Clean is a family-run business rooted in Epsom, Surrey. For over ten years, we have been keeping local homes and businesses looking their best — using methods that are kinder to the environment and gentler on your property.</p>
-          <p class="text-navy/70 leading-relaxed mb-6">Every member of our team is fully trained, DBS checked and insured. We turn up on time, treat your property with care, and do not leave until the job meets our high standards.</p>
-          <a href="/about/" class="inline-block bg-accent hover:bg-accent-dark text-white font-heading font-bold px-8 py-3 rounded-full transition-all shadow-md hover:shadow-lg hover:scale-105">
+          <h2 class="font-heading font-bold text-3xl text-navy mb-4">
+            Who We Are
+          </h2>
+          <p class="text-navy/70 leading-relaxed mb-4">
+            ProGreen Clean is a family-run business rooted in Epsom, Surrey. For
+            over ten years, we have been keeping local homes and businesses
+            looking their best — using methods that are kinder to the
+            environment and gentler on your property.
+          </p>
+          <p class="text-navy/70 leading-relaxed mb-6">
+            Every member of our team is fully trained, DBS checked and insured.
+            We turn up on time, treat your property with care, and do not leave
+            until the job meets our high standards.
+          </p>
+          <a
+            href="/about/"
+            class="inline-block bg-accent hover:bg-accent-dark text-white font-heading font-bold px-8 py-3 rounded-full transition-all shadow-md hover:shadow-lg hover:scale-105"
+          >
             Learn More About Us
           </a>
         </div>
-        <div class="bg-white rounded-3xl p-8 text-center shadow-sm border border-card-bg">
+        <div
+          class="bg-white/70 rounded-3xl p-8 text-center shadow-sm border border-white/50"
+        >
           <div class="grid grid-cols-2 gap-6">
-            <div class="p-4"><span class="block font-heading font-extrabold text-4xl text-primary mb-1">10+</span><span class="text-navy/60 text-sm">Years Experience</span></div>
-            <div class="p-4"><span class="block font-heading font-extrabold text-4xl text-primary mb-1">500+</span><span class="text-navy/60 text-sm">Happy Customers</span></div>
-            <div class="p-4"><span class="block font-heading font-extrabold text-4xl text-primary mb-1">12</span><span class="text-navy/60 text-sm">Services Offered</span></div>
-            <div class="p-4"><span class="block font-heading font-extrabold text-4xl text-primary mb-1">100%</span><span class="text-navy/60 text-sm">Satisfaction Guarantee</span></div>
+            <div class="p-4">
+              <span
+                class="block font-heading font-extrabold text-4xl text-primary mb-1"
+                >10+</span
+              ><span class="text-navy/60 text-sm">Years Experience</span>
+            </div>
+            <div class="p-4">
+              <span
+                class="block font-heading font-extrabold text-4xl text-primary mb-1"
+                >500+</span
+              ><span class="text-navy/60 text-sm">Happy Customers</span>
+            </div>
+            <div class="p-4">
+              <span
+                class="block font-heading font-extrabold text-4xl text-primary mb-1"
+                >12</span
+              ><span class="text-navy/60 text-sm">Services Offered</span>
+            </div>
+            <div class="p-4">
+              <span
+                class="block font-heading font-extrabold text-4xl text-primary mb-1"
+                >100%</span
+              ><span class="text-navy/60 text-sm">Satisfaction Guarantee</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <WaveDivider variant="off-white-to-white" />
+  <WaveDivider variant="teal-to-white" />
   <section class="py-16 lg:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 lg:px-8 text-center">
-      <h2 class="font-heading font-bold text-3xl text-navy mb-4">What Our Customers Say</h2>
-      <p class="text-navy/60 mb-12 max-w-2xl mx-auto">We are proud of the feedback we receive. Genuine reviews from real customers will appear here soon.</p>
+      <h2 class="font-heading font-bold text-3xl text-navy mb-4">
+        What Our Customers Say
+      </h2>
+      <p class="text-navy/60 mb-12 max-w-2xl mx-auto">
+        We are proud of the feedback we receive. Genuine reviews from real
+        customers will appear here soon.
+      </p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-off-white rounded-3xl p-6 shadow-sm text-left border border-card-bg">
+        <div
+          class="bg-off-white rounded-3xl p-6 shadow-sm text-left border border-card-bg"
+        >
           <div class="flex gap-1 mb-3">
-            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg
+              class="w-5 h-5 text-accent"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              ><path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path></svg
+            >
+            <svg
+              class="w-5 h-5 text-accent"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              ><path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path></svg
+            >
+            <svg
+              class="w-5 h-5 text-accent"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              ><path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path></svg
+            >
+            <svg
+              class="w-5 h-5 text-accent"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              ><path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path></svg
+            >
+            <svg
+              class="w-5 h-5 text-accent"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              ><path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path></svg
+            >
           </div>
-          <p class="text-navy/70 text-sm leading-relaxed mb-4 italic">"Genuine customer reviews will be displayed here once we have collected verified feedback."</p>
-          <span class="text-navy/40 text-sm font-semibold">— Review placeholder</span>
+          <p class="text-navy/70 text-sm leading-relaxed mb-4 italic">
+            "Genuine customer reviews will be displayed here once we have
+            collected verified feedback."
+          </p>
+          <span class="text-navy/40 text-sm font-semibold"
+            >— Review placeholder</span
+          >
         </div>
-        <div class="bg-off-white rounded-3xl p-6 shadow-sm text-left border border-card-bg">
+        <div
+          class="bg-off-white rounded-3xl p-6 shadow-sm text-left border border-card-bg"
+        >
           <div class="flex gap-1 mb-3">
-            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg
+              class="w-5 h-5 text-accent"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              ><path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path></svg
+            >
+            <svg
+              class="w-5 h-5 text-accent"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              ><path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path></svg
+            >
+            <svg
+              class="w-5 h-5 text-accent"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              ><path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path></svg
+            >
+            <svg
+              class="w-5 h-5 text-accent"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              ><path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path></svg
+            >
+            <svg
+              class="w-5 h-5 text-accent"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              ><path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path></svg
+            >
           </div>
-          <p class="text-navy/70 text-sm leading-relaxed mb-4 italic">"We never publish fake reviews. This section will be updated with authentic testimonials."</p>
-          <span class="text-navy/40 text-sm font-semibold">— Review placeholder</span>
+          <p class="text-navy/70 text-sm leading-relaxed mb-4 italic">
+            "We never publish fake reviews. This section will be updated with
+            authentic testimonials."
+          </p>
+          <span class="text-navy/40 text-sm font-semibold"
+            >— Review placeholder</span
+          >
         </div>
-        <div class="bg-off-white rounded-3xl p-6 shadow-sm text-left border border-card-bg">
+        <div
+          class="bg-off-white rounded-3xl p-6 shadow-sm text-left border border-card-bg"
+        >
           <div class="flex gap-1 mb-3">
-            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg
+              class="w-5 h-5 text-accent"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              ><path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path></svg
+            >
+            <svg
+              class="w-5 h-5 text-accent"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              ><path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path></svg
+            >
+            <svg
+              class="w-5 h-5 text-accent"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              ><path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path></svg
+            >
+            <svg
+              class="w-5 h-5 text-accent"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              ><path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path></svg
+            >
+            <svg
+              class="w-5 h-5 text-accent"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              ><path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path></svg
+            >
           </div>
-          <p class="text-navy/70 text-sm leading-relaxed mb-4 italic">"Check back soon for real feedback from homeowners and businesses across Epsom and Surrey."</p>
-          <span class="text-navy/40 text-sm font-semibold">— Review placeholder</span>
+          <p class="text-navy/70 text-sm leading-relaxed mb-4 italic">
+            "Check back soon for real feedback from homeowners and businesses
+            across Epsom and Surrey."
+          </p>
+          <span class="text-navy/40 text-sm font-semibold"
+            >— Review placeholder</span
+          >
         </div>
       </div>
-      <a href="/reviews/" class="inline-block mt-8 bg-accent hover:bg-accent-dark text-white font-heading font-bold px-8 py-3 rounded-full transition-all shadow-md hover:shadow-lg hover:scale-105">Read All Reviews</a>
+      <a
+        href="/reviews/"
+        class="inline-block mt-8 bg-accent hover:bg-accent-dark text-white font-heading font-bold px-8 py-3 rounded-full transition-all shadow-md hover:shadow-lg hover:scale-105"
+        >Read All Reviews</a
+      >
     </div>
   </section>
   <WaveDivider variant="white-to-teal" />
-  <section class="py-16 lg:py-20 bg-[#dfedea]">
+  <section class="py-16 lg:py-20 bg-[#dfedea]" aria-label="Areas We Cover">
     <ServiceAreaMap />
   </section>
   <WaveDivider variant="teal-to-white" />
   <CtaBanner />
 </SiteLayout>
-
