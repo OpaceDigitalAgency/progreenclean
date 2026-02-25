@@ -3,7 +3,6 @@ import SiteLayout from '../layouts/SiteLayout.astro';
 import HeroSection from '../components/HeroSection.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import TrustBar from '../components/TrustBar.astro';
-import ProcessSteps from '../components/ProcessSteps.astro';
 import CtaBanner from '../components/CtaBanner.astro';
 import ServiceAreaMap from '../components/ServiceAreaMap.astro';
 import WaveDivider from '../components/WaveDivider.astro';
@@ -18,8 +17,8 @@ import services from '../data/services.json';
     secondaryCtaText="Call Us"
     secondaryCtaHref="tel:01372898732"
   />
-  <section class="bg-[#dfedea] relative overflow-hidden" style="padding-block: 0px;">
-    <div class="max-w-7xl mx-auto px-4 lg:px-8 py-20 lg:py-0">
+  <section class="bg-[#dfedea] relative overflow-hidden py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
       <h2 class="font-heading font-bold text-4xl text-navy text-center mb-6">Our Professional Services</h2>
       <p class="text-navy/60 text-center mb-16 max-w-3xl mx-auto text-lg">From gleaming windows to spotless ovens, we handle every type of clean — domestic and commercial — across Epsom and the surrounding Surrey towns.</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
@@ -34,11 +33,40 @@ import services from '../data/services.json';
       </div>
     </div>
   </section>
-  <WaveDivider variant="off-white-to-white" />
-  <TrustBar />
-  <ProcessSteps />
-  <WaveDivider variant="white-to-off-white" />
-  <section class="py-16 lg:py-20 bg-off-white">
+  <WaveDivider variant="teal-to-white" />
+  <section class="py-10 bg-white">
+    <TrustBar />
+  </section>
+  <WaveDivider variant="white-to-teal" />
+  <section class="py-16 lg:py-20 bg-[#dfedea]">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl text-navy text-center mb-12">How It Works</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="relative text-center group">
+          <div class="w-18 h-18 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 text-2xl font-heading font-bold shadow-lg shadow-primary/25 group-hover:scale-110 transition-transform">1</div>
+          <h3 class="font-heading font-bold text-lg text-navy mb-2">Get in Touch</h3>
+          <p class="text-navy/60 text-sm leading-relaxed">Call us or fill out our quick online form. We will respond within 24 hours.</p>
+        </div>
+        <div class="relative text-center group">
+          <div class="w-18 h-18 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 text-2xl font-heading font-bold shadow-lg shadow-primary/25 group-hover:scale-110 transition-transform">2</div>
+          <h3 class="font-heading font-bold text-lg text-navy mb-2">Free Quote</h3>
+          <p class="text-navy/60 text-sm leading-relaxed">We will provide a transparent, no-obligation quote based on your specific needs.</p>
+        </div>
+        <div class="relative text-center group">
+          <div class="w-18 h-18 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 text-2xl font-heading font-bold shadow-lg shadow-primary/25 group-hover:scale-110 transition-transform">3</div>
+          <h3 class="font-heading font-bold text-lg text-navy mb-2">Schedule Service</h3>
+          <p class="text-navy/60 text-sm leading-relaxed">Pick a date and time that works for you. We are flexible and reliable.</p>
+        </div>
+        <div class="relative text-center group">
+          <div class="w-18 h-18 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4 text-2xl font-heading font-bold shadow-lg shadow-primary/25 group-hover:scale-110 transition-transform">4</div>
+          <h3 class="font-heading font-bold text-lg text-navy mb-2">Enjoy Results</h3>
+          <p class="text-navy/60 text-sm leading-relaxed">We arrive on time, do the job right, and leave you with a sparkling clean property.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <WaveDivider variant="teal-to-white" />
+  <section class="py-16 lg:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
@@ -103,9 +131,11 @@ import services from '../data/services.json';
       <a href="/reviews/" class="inline-block mt-8 bg-accent hover:bg-accent-dark text-white font-heading font-bold px-8 py-3 rounded-full transition-all shadow-md hover:shadow-lg hover:scale-105">Read All Reviews</a>
     </div>
   </section>
-  <WaveDivider variant="white-to-off-white" />
-  <ServiceAreaMap />
-  <WaveDivider variant="teal-to-off-white" flip={true} />
+  <WaveDivider variant="white-to-teal" />
+  <section class="py-16 lg:py-20 bg-[#dfedea]">
+    <ServiceAreaMap />
+  </section>
+  <WaveDivider variant="teal-to-white" />
   <CtaBanner />
 </SiteLayout>
 
