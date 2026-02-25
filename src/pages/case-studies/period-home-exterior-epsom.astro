@@ -1,0 +1,29 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+---
+<SiteLayout title="Full Exterior Clean for a Period Home in Epsom" description="Windows, gutters, fascias and a moss-covered driveway — all brought back to life over two days.">
+  <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Case Studies', url: '/case-studies/' }, { name: 'Period Home Exterior Clean' }]} />
+  <article class="py-12 lg:py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 lg:px-8">
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="bg-primary/10 text-primary text-xs font-semibold px-2 py-1 rounded-full">Window Cleaning</span>
+        <span class="bg-primary/10 text-primary text-xs font-semibold px-2 py-1 rounded-full">Gutter Cleaning</span>
+        <span class="bg-primary/10 text-primary text-xs font-semibold px-2 py-1 rounded-full">Pressure Washing</span>
+      </div>
+      <h1 class="font-heading font-extrabold text-3xl md:text-4xl text-navy mb-6">Full Exterior Clean for a Period Home in Epsom</h1>
+      <div class="prose max-w-none text-navy/70 leading-relaxed space-y-4">
+        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">The Brief</h2>
+        <p>A homeowner in central Epsom had a Victorian semi that had not had a proper exterior clean in over three years. The gutters were overflowing, the driveway was covered in moss, and the windows had a permanent haze from hard-water deposits.</p>
+        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">What We Did</h2>
+        <p>Day one focused on the windows and gutters. We used our water-fed pole system on all windows — front, back and side — removing hard-water marks and years of built-up grime. The SkyVac cleared compacted leaf debris from every gutter run, and we flushed all downpipes.</p>
+        <p>Day two was the driveway. We pressure-washed the entire block-paved area, lifted the moss and dirt, then re-sanded the joints with kiln-dried sand.</p>
+        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">The Result</h2>
+        <p>The homeowner said the house looked "like it did when we first moved in." The gutters drain properly, the windows are streak-free, and the driveway looks brand new. They have since booked a regular six-weekly window clean.</p>
+      </div>
+    </div>
+  </article>
+  <CtaBanner headline="Want Similar Results?" text="Get in touch and tell us what your property needs. We will put together a plan and a clear quote." />
+</SiteLayout>
+

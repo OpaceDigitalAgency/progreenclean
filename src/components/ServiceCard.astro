@@ -1,0 +1,20 @@
+---
+interface Props {
+  title: string;
+  slug: string;
+  icon: string;
+  description: string;
+  price: string;
+}
+
+const { title, slug, icon, description, price } = Astro.props;
+---
+<a href={`/services/${slug}/`} class="group block bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-primary/20 hover:-translate-y-1">
+  <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+    <span class="material-symbols-rounded text-3xl text-primary">{icon}</span>
+  </div>
+  <h3 class="font-heading font-bold text-lg text-navy mb-2 group-hover:text-primary transition-colors">{title}</h3>
+  <p class="text-navy/60 text-sm leading-relaxed mb-3">{description}</p>
+  <span class="text-primary font-heading font-bold text-sm">{price} →</span>
+</a>
+

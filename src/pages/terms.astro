@@ -1,0 +1,38 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+<SiteLayout title="Terms and Conditions" description="Terms and conditions for using the ProGreen Clean Ltd website and services." noindex={true}>
+  <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Terms and Conditions' }]} />
+  <section class="py-12 lg:py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 lg:px-8">
+      <h1 class="font-heading font-extrabold text-3xl md:text-4xl text-navy mb-6">Terms and Conditions</h1>
+      <p class="text-navy/40 text-sm mb-8">Last updated: 25 February 2026</p>
+      <div class="prose max-w-none text-navy/70 leading-relaxed space-y-6">
+        <h2 class="font-heading font-bold text-xl text-navy">1. Company Information</h2>
+        <p>This website is operated by ProGreen Clean Ltd (Company No. 16783547), registered at 99 Ebbisham Rd, Epsom, Surrey KT18 7NS.</p>
+        <h2 class="font-heading font-bold text-xl text-navy">2. Use of This Website</h2>
+        <p>By using this website, you agree to these terms. The content is provided for general information and to allow you to request quotes for our cleaning services. We make reasonable efforts to keep the information accurate, but we do not guarantee that everything is complete or up to date at all times.</p>
+        <h2 class="font-heading font-bold text-xl text-navy">3. Quotes and Pricing</h2>
+        <p>All prices shown on this website are starting prices and are intended as a guide only. Final pricing depends on the specifics of your property and the scope of work required. A firm quote will be provided before any work begins, and no work will start without your agreement.</p>
+        <h2 class="font-heading font-bold text-xl text-navy">4. Bookings and Cancellations</h2>
+        <p>Once a quote has been accepted and a booking confirmed, we ask for at least 24 hours' notice for cancellations or rescheduling. Cancellations with less than 24 hours' notice may be subject to a cancellation fee.</p>
+        <h2 class="font-heading font-bold text-xl text-navy">5. Our Liability</h2>
+        <p>ProGreen Clean Ltd carries full public liability insurance. We take every reasonable precaution to avoid damage to your property. In the unlikely event that damage occurs as a direct result of our work, we will work with you and our insurer to resolve the matter promptly.</p>
+        <h2 class="font-heading font-bold text-xl text-navy">6. Access and Safety</h2>
+        <p>You are responsible for ensuring safe access to the areas that need cleaning. If we identify a safety concern on arrival (such as unstable structures or hazardous materials), we reserve the right to decline or modify the scope of work.</p>
+        <h2 class="font-heading font-bold text-xl text-navy">7. Satisfaction Guarantee</h2>
+        <p>If you are not satisfied with any aspect of our work, let us know within 24 hours and we will return to put it right at no extra cost.</p>
+        <h2 class="font-heading font-bold text-xl text-navy">8. Intellectual Property</h2>
+        <p>All content on this website — including text, images, design and code — is the property of ProGreen Clean Ltd or its licensors. You may not reproduce, distribute or use any content without our written permission.</p>
+        <h2 class="font-heading font-bold text-xl text-navy">9. External Links</h2>
+        <p>This website may contain links to third-party websites. We are not responsible for the content or privacy practices of those sites.</p>
+        <h2 class="font-heading font-bold text-xl text-navy">10. Governing Law</h2>
+        <p>These terms are governed by the laws of England and Wales. Any disputes will be subject to the exclusive jurisdiction of the English courts.</p>
+        <h2 class="font-heading font-bold text-xl text-navy">11. Contact</h2>
+        <p>If you have any questions about these terms, please contact us at <a href="mailto:info@progreenclean.co.uk" class="text-primary hover:underline">info@progreenclean.co.uk</a> or call <a href="tel:01372898732" class="text-primary hover:underline">01372 898732</a>.</p>
+      </div>
+    </div>
+  </section>
+</SiteLayout>
+

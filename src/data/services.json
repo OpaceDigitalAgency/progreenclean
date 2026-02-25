@@ -1,0 +1,172 @@
+[
+  {
+    "title": "Window Cleaning",
+    "slug": "window-cleaning",
+    "icon": "window",
+    "description": "Streak-free windows, interior and exterior, for brilliant clarity.",
+    "longDescription": "Our pure water-fed pole system reaches up to 60 feet, delivering streak-free results without ladders or chemicals. We clean both interior and exterior windows for homes and businesses across Epsom and Surrey.",
+    "price": "From £25",
+    "faqs": [
+      { "question": "Can you clean interior windows as well?", "answer": "Absolutely. We offer both interior and exterior window cleaning. Our team uses lint-free cloths and eco-friendly solutions indoors to leave your windows sparkling without any residue." },
+      { "question": "How high can you reach?", "answer": "Our water-fed pole system reaches up to 60 feet (roughly four storeys). For anything higher, we carry out a site assessment first." },
+      { "question": "Will my floors get wet?", "answer": "We take great care to protect your floors and furnishings. Drop sheets are laid down when cleaning interior windows, so your carpets stay dry." },
+      { "question": "How often should I have my windows cleaned?", "answer": "We recommend every four to six weeks for residential properties and monthly for commercial premises to maintain a spotless appearance." },
+      { "question": "Do you remove paint spots or stickers?", "answer": "Yes, we can remove most adhesive residues, paint splashes and hard-water stains using specialist scraping tools and solutions." }
+    ]
+  },
+  {
+    "title": "Gutter Cleaning",
+    "slug": "gutter-cleaning",
+    "icon": "cleaning_services",
+    "description": "Clear gutters for proper water flow and property protection.",
+    "longDescription": "Blocked gutters cause damp, mould and structural damage. Our SkyVac system clears debris safely from the ground, followed by a full inspection of joints and downpipes.",
+    "price": "From £45",
+    "faqs": [
+      { "question": "How do you clean gutters without ladders?", "answer": "We use the SkyVac system — a powerful vacuum with a long carbon-fibre pole and camera. It reaches up to four storeys and lets us clear debris safely from the ground." },
+      { "question": "How often should gutters be cleaned?", "answer": "We recommend at least once a year, ideally in late autumn after the leaves have fallen. Properties near trees may benefit from twice-yearly cleaning." },
+      { "question": "Do you inspect downpipes as well?", "answer": "Yes. Every gutter clean includes a full inspection of joints, brackets and downpipes. We flush them through to make sure water flows freely." },
+      { "question": "What happens if you find damage?", "answer": "We photograph any issues and provide a written report. We can carry out minor repairs on the spot or recommend a specialist if needed." }
+    ]
+  },
+  {
+    "title": "Carpet Cleaning",
+    "slug": "carpet-cleaning",
+    "icon": "format_color_fill",
+    "description": "Deep cleaning to refresh and revitalise your carpets.",
+    "longDescription": "Our industrial hot-water extraction machines lift deep-set dirt, allergens and stains from carpets, rugs and upholstery. Safe for all fibre types and pet-friendly households.",
+    "price": "From £35",
+    "faqs": [
+      { "question": "Is carpet cleaning safe for pets?", "answer": "Yes. We use non-toxic, eco-friendly solutions that are safe for children and pets. Carpets are typically dry within two to four hours." },
+      { "question": "Can you remove stubborn stains?", "answer": "Most stains come out with our professional-grade equipment. We pre-treat tough marks like red wine, coffee and pet accidents before extraction." },
+      { "question": "Do you move furniture?", "answer": "We can move light furniture such as dining chairs and small tables. Larger items should be moved beforehand for the best results." },
+      { "question": "How long does carpet cleaning take?", "answer": "A typical three-bedroom house takes around two to three hours. We will give you an accurate estimate when you book." }
+    ]
+  },
+  {
+    "title": "Oven Cleaning",
+    "slug": "oven-cleaning",
+    "icon": "soup_kitchen",
+    "description": "Thorough cleaning of ovens, hobs, and extractor fans.",
+    "longDescription": "We deep-clean single, double, range and AGA ovens using non-caustic, eco-friendly products. Racks, trays, doors, seals and extractor fans are all included.",
+    "price": "From £55",
+    "faqs": [
+      { "question": "What types of oven do you clean?", "answer": "We clean all types — single, double, range cookers, AGAs and commercial ovens. Hobs, extractors and microwaves can be added as extras." },
+      { "question": "Are your products safe to use around food?", "answer": "Yes. We only use non-caustic, food-safe solutions. Your oven is ready to use as soon as we finish." },
+      { "question": "How long does an oven clean take?", "answer": "A single oven typically takes one to two hours. Double ovens and range cookers take a little longer." },
+      { "question": "Do you clean the extractor fan?", "answer": "Yes, extractor fan and filter cleaning is available as an add-on for a small extra charge." }
+    ]
+  },
+  {
+    "title": "Domestic Cleaning",
+    "slug": "domestic-cleaning",
+    "icon": "home",
+    "description": "Comprehensive indoor cleaning for a spotless home.",
+    "longDescription": "Tailored home cleaning plans for busy households. Whether you need a regular weekly visit or a thorough one-off deep clean, our trained team covers kitchens, bathrooms, bedrooms and living areas.",
+    "price": "From £20/hr",
+    "faqs": [
+      { "question": "Can I book a regular weekly clean?", "answer": "Of course. We offer weekly, fortnightly and monthly packages to suit your schedule, all at competitive rates." },
+      { "question": "Do you bring your own products?", "answer": "Yes, we supply all eco-friendly cleaning products and equipment. If you prefer us to use specific products, just let us know." },
+      { "question": "Do you offer key holding?", "answer": "Yes. Many of our regular clients give us a spare key so we can clean while they are out. Keys are stored securely and insured." },
+      { "question": "What does a deep clean include?", "answer": "A deep clean covers everything from skirting boards and light switches to inside cupboards, appliances and behind furniture — every surface gets attention." }
+    ]
+  },
+  {
+    "title": "Pressure & Soft Washing",
+    "slug": "pressure-washing",
+    "icon": "water_drop",
+    "description": "Effective cleaning for driveways, patios, and exterior walls.",
+    "longDescription": "We restore driveways, patios, decking and exterior walls to their original condition using commercial-grade pressure washers and gentle soft-wash techniques for delicate surfaces.",
+    "price": "From £80",
+    "faqs": [
+      { "question": "What is the difference between pressure washing and soft washing?", "answer": "Pressure washing uses high-pressure water for hard surfaces like concrete and block paving. Soft washing uses lower pressure with specialist solutions, ideal for render, cladding and painted surfaces." },
+      { "question": "Will pressure washing damage my paving?", "answer": "Not when done properly. We adjust the pressure and nozzle to suit the surface, and we always test a small area first." },
+      { "question": "Can you re-sand my block paving afterwards?", "answer": "Yes. We offer kiln-dried sand re-application after cleaning to stabilise the blocks and inhibit weed growth." },
+      { "question": "How long does a driveway take?", "answer": "A standard driveway takes around two to four hours depending on size and condition. We will give you a time estimate with your quote." }
+    ]
+  },
+  {
+    "title": "End of Tenancy Cleaning",
+    "slug": "end-of-tenancy-cleaning",
+    "icon": "key",
+    "description": "Deep clean guaranteed to help secure your full deposit back.",
+    "longDescription": "Our end-of-tenancy clean covers every room from top to bottom — kitchen appliances, bathrooms, carpets, windows and all fixtures. Ideal for landlords, tenants and letting agents.",
+    "price": "From £120",
+    "faqs": [
+      { "question": "Is the clean guaranteed to pass an inventory check?", "answer": "Yes. We provide a satisfaction guarantee. If anything is flagged during the check-out inspection, we return to put it right at no extra cost." },
+      { "question": "Does it include carpet and oven cleaning?", "answer": "Our standard end-of-tenancy package includes oven and carpet cleaning. We can also add extras such as fridge, freezer and balcony cleaning." },
+      { "question": "How far in advance should I book?", "answer": "We recommend booking at least a week before your move-out date. Last-minute bookings are sometimes possible — call us to check availability." },
+      { "question": "Can you clean furnished properties?", "answer": "Yes, we clean both furnished and unfurnished properties. Furnished cleans take a little longer as we work around the furniture." }
+    ]
+  },
+  {
+    "title": "Commercial Cleaning",
+    "slug": "commercial-cleaning",
+    "icon": "business",
+    "description": "Reliable contract cleaning for offices, shops, and warehouses.",
+    "longDescription": "Flexible cleaning contracts tailored to your business. We clean offices, retail units, warehouses, restaurants and communal areas outside normal working hours to minimise disruption.",
+    "price": "Custom Quote",
+    "faqs": [
+      { "question": "Can you clean outside business hours?", "answer": "Absolutely. Most of our commercial clients prefer early-morning or evening cleans. We work around your schedule." },
+      { "question": "Do you offer contract cleaning?", "answer": "Yes. We provide weekly, fortnightly and monthly contracts with fixed pricing. All contracts include a dedicated account manager." },
+      { "question": "Are your staff DBS checked?", "answer": "Yes. All our cleaners are fully vetted, DBS checked and trained to work in commercial environments." },
+      { "question": "What commercial premises do you cover?", "answer": "We clean offices, shops, restaurants, warehouses, schools, surgeries and communal areas in residential blocks." }
+    ]
+  },
+  {
+    "title": "Solar Panel Cleaning",
+    "slug": "solar-panel-cleaning",
+    "icon": "wb_sunny",
+    "description": "Maximise efficiency with clean solar panels.",
+    "longDescription": "Dirty solar panels lose up to 25% of their energy output. Our pure-water cleaning system safely removes bird droppings, algae and grime without scratching the glass.",
+    "price": "From £40",
+    "faqs": [
+      { "question": "How often should solar panels be cleaned?", "answer": "We recommend cleaning every six to twelve months. Panels near trees, roads or the coast may need more frequent attention." },
+      { "question": "Will cleaning really improve output?", "answer": "Yes. Studies show dirty panels can lose up to 25% efficiency. A professional clean restores maximum energy production." },
+      { "question": "Is it safe for the panels?", "answer": "Completely. We use de-ionised pure water and soft brushes — no chemicals or abrasive materials that could scratch or damage the coating." },
+      { "question": "Do you work on roof-mounted and ground-mounted panels?", "answer": "Yes. We clean both types using our water-fed pole system, which means no need to walk on your roof." }
+    ]
+  },
+  {
+    "title": "SkyVac Gutter Cleaning",
+    "slug": "skyvac-gutter-cleaning",
+    "icon": "air",
+    "description": "Safe, high-reach gutter cleaning from the ground.",
+    "longDescription": "Our SkyVac industrial vacuum system clears gutters, fascias and soffits from ground level — no ladders, no scaffolding, no risk. A built-in camera lets us show you the results in real time.",
+    "price": "From £65",
+    "faqs": [
+      { "question": "What is SkyVac?", "answer": "SkyVac is an industrial gutter vacuum with lightweight carbon-fibre poles and an on-board camera. It clears debris from up to 12 metres without ladders." },
+      { "question": "Is SkyVac safe for my property?", "answer": "Yes. Because we work from the ground, there is no risk of ladder damage to walls, windowsills or flower beds." },
+      { "question": "Can I see the results?", "answer": "Yes. The built-in camera feeds a live image so you can see the before-and-after condition of your gutters on screen." },
+      { "question": "What areas do you cover with SkyVac?", "answer": "We cover Epsom, Ewell, Ashtead, Leatherhead, Banstead, Chessington and the wider Surrey area." }
+    ]
+  },
+  {
+    "title": "Conservatory Cleaning",
+    "slug": "conservatory-cleaning",
+    "icon": "deck",
+    "description": "Revive your conservatory with roof, frame, and window cleaning.",
+    "longDescription": "We clean conservatory roofs, frames, windows and gutters using pure water and specialist tools. The result is a brighter, fresher conservatory free of algae, moss and grime.",
+    "price": "From £95",
+    "faqs": [
+      { "question": "Do you clean polycarbonate and glass roofs?", "answer": "Yes. We clean both polycarbonate and glass conservatory roofs using soft brushes and pure water to avoid scratching." },
+      { "question": "Will you clean the frames and seals?", "answer": "Yes. We clean all UPVC frames, seals and trims as part of the service. We can also treat algae-prone areas to slow regrowth." },
+      { "question": "How often should a conservatory be cleaned?", "answer": "We recommend every three to six months to keep algae and moss at bay, especially on north-facing roofs." },
+      { "question": "Do you clean the inside of the conservatory too?", "answer": "Yes. Interior glass and roof panels can be cleaned at the same time for a complete inside-and-out refresh." }
+    ]
+  },
+  {
+    "title": "Graffiti Removal",
+    "slug": "graffiti-removal",
+    "icon": "format_paint",
+    "description": "Fast, effective graffiti removal using safe methods.",
+    "longDescription": "We remove graffiti from brick, stone, metal, glass and painted surfaces using specialist non-abrasive solutions. Anti-graffiti coatings can be applied afterwards for long-term protection.",
+    "price": "Custom Quote",
+    "faqs": [
+      { "question": "What surfaces can you treat?", "answer": "We remove graffiti from brick, stone, render, metal, glass, plastic and painted surfaces. Each material requires a different approach." },
+      { "question": "Will removal damage the surface underneath?", "answer": "No. We use non-abrasive, surface-appropriate solutions and test a small area first to ensure no damage." },
+      { "question": "Can you apply an anti-graffiti coating?", "answer": "Yes. We offer sacrificial and permanent anti-graffiti coatings that make future removal quick and easy." },
+      { "question": "How quickly can you respond?", "answer": "We aim to attend within 24 to 48 hours of your call. Fast removal reduces the chance of copycat vandalism." }
+    ]
+  }
+]
+

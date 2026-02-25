@@ -1,0 +1,52 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import TrustBar from '../components/TrustBar.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+---
+<SiteLayout title="About Us" description="Meet the team behind ProGreen Clean. Family-run, fully insured cleaning specialists serving Epsom and Surrey for over 10 years.">
+  <HeroSection
+    headline="A Family Business Built on<br /><span class='text-primary'>Hard Work and Trust</span>"
+    subheadline="ProGreen Clean started with a bucket, a ladder and a genuine desire to do things properly. Over ten years on, that same attitude drives everything we do."
+    compact={true}
+  />
+  <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'About' }]} />
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <h2 class="font-heading font-bold text-3xl text-navy mb-6">Our Story</h2>
+          <p class="text-navy/70 leading-relaxed mb-4">ProGreen Clean grew out of a straightforward idea: local people deserve reliable, honest cleaning services that actually deliver. What began as one person with a van in Epsom has grown into a trusted team covering Surrey and beyond.</p>
+          <p class="text-navy/70 leading-relaxed mb-4">We got fed up with hearing the same complaints — missed appointments, sloppy work, hidden charges. So we set out to do things differently. We turn up when we say we will, we charge what we quote, and we do not leave a job half-finished.</p>
+          <p class="text-navy/70 leading-relaxed mb-4">Every product we use is chosen for performance and environmental impact. We favour water-fed pole systems over harsh chemicals, biodegradable solutions over bleach, and careful hand-work over rushed results.</p>
+          <p class="text-navy/70 leading-relaxed">We are still family-run, still based in Epsom, and still answer the phone ourselves. That is how we like it.</p>
+        </div>
+        <div class="bg-gradient-to-br from-aqua-light to-white rounded-2xl p-8">
+          <h3 class="font-heading font-bold text-xl text-navy mb-4">What Matters to Us</h3>
+          <ul class="space-y-4">
+            <li class="flex gap-3"><span class="material-symbols-rounded text-accent text-xl mt-0.5">check_circle</span><div><strong class="text-navy">Reliability</strong><p class="text-navy/60 text-sm">We confirm, we show up, we get it done. No excuses.</p></div></li>
+            <li class="flex gap-3"><span class="material-symbols-rounded text-accent text-xl mt-0.5">check_circle</span><div><strong class="text-navy">Transparency</strong><p class="text-navy/60 text-sm">Clear prices upfront. The quote you see is the price you pay.</p></div></li>
+            <li class="flex gap-3"><span class="material-symbols-rounded text-accent text-xl mt-0.5">check_circle</span><div><strong class="text-navy">Quality</strong><p class="text-navy/60 text-sm">Professional equipment, proper training, genuine care for your property.</p></div></li>
+            <li class="flex gap-3"><span class="material-symbols-rounded text-accent text-xl mt-0.5">check_circle</span><div><strong class="text-navy">Eco-Awareness</strong><p class="text-navy/60 text-sm">Biodegradable products, pure water systems, minimal chemical use.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-16 lg:py-20 bg-off-white">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 text-center">
+      <h2 class="font-heading font-bold text-3xl text-navy mb-4">Fully Insured & Accredited</h2>
+      <p class="text-navy/60 mb-8 max-w-2xl mx-auto">We carry full public liability insurance, and every member of the team is DBS checked. ProGreen Clean Ltd is registered with Companies House (No. 16783547).</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="bg-white rounded-xl p-6 shadow-sm"><span class="material-symbols-rounded text-4xl text-primary mb-2 block">shield</span><span class="font-heading font-semibold text-sm text-navy">Public Liability Insured</span></div>
+        <div class="bg-white rounded-xl p-6 shadow-sm"><span class="material-symbols-rounded text-4xl text-primary mb-2 block">badge</span><span class="font-heading font-semibold text-sm text-navy">DBS Checked Staff</span></div>
+        <div class="bg-white rounded-xl p-6 shadow-sm"><span class="material-symbols-rounded text-4xl text-primary mb-2 block">apartment</span><span class="font-heading font-semibold text-sm text-navy">Companies House Registered</span></div>
+        <div class="bg-white rounded-xl p-6 shadow-sm"><span class="material-symbols-rounded text-4xl text-primary mb-2 block">eco</span><span class="font-heading font-semibold text-sm text-navy">Eco-Friendly Methods</span></div>
+      </div>
+    </div>
+  </section>
+  <TrustBar />
+  <CtaBanner headline="Want to Work with a Team That Cares?" text="Drop us a line or give us a ring. We are always happy to chat about your cleaning needs — no hard sell, no pressure." />
+</SiteLayout>
+

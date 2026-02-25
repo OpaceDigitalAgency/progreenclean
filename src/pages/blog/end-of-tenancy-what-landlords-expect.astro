@@ -1,0 +1,36 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'End of Tenancy Cleaning: What Landlords Actually Expect',
+  datePublished: '2026-01-28',
+  author: { '@type': 'Organization', name: 'ProGreen Clean' },
+  publisher: { '@type': 'Organization', name: 'ProGreen Clean' },
+};
+---
+<SiteLayout title="End of Tenancy Cleaning: What Landlords Actually Expect" description="Moving out? Here is a plain-English breakdown of what a proper end-of-tenancy clean covers — and how to get your deposit back." schemas={[articleSchema]}>
+  <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Blog', url: '/blog/' }, { name: 'End of Tenancy Cleaning' }]} />
+  <article class="py-12 lg:py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 lg:px-8">
+      <time datetime="2026-01-28" class="text-sm text-navy/40 font-semibold">28 January 2026</time>
+      <h1 class="font-heading font-extrabold text-3xl md:text-4xl text-navy mt-3 mb-6">End of Tenancy Cleaning: What Landlords Actually Expect</h1>
+      <div class="prose max-w-none text-navy/70 leading-relaxed space-y-4">
+        <p>The phrase "professional clean" appears in nearly every tenancy agreement, but what does it actually mean? And what happens if your clean does not pass the checkout inspection? Here is a straightforward guide.</p>
+        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">What Gets Checked</h2>
+        <p>Inventory clerks work from a detailed list. They check kitchens (inside ovens, behind appliances, splashbacks), bathrooms (grouting, taps, shower screens), carpets, windows, skirting boards, light fittings and even the inside of drawers. If the property was clean when you moved in, it needs to be clean when you leave.</p>
+        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">Can You Do It Yourself?</h2>
+        <p>You can try, but most letting agents prefer to see an invoice from a professional cleaning company. It gives them confidence the work has been done to a consistent standard. More importantly, a professional clean usually comes with a guarantee — if something is flagged, the company returns and sorts it at no extra cost.</p>
+        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">What Our End-of-Tenancy Clean Covers</h2>
+        <p>Everything. Oven, hob, extractor, fridge, freezer, all kitchen surfaces, bathroom tiles and grouting, shower screens, toilets, basins, all floor surfaces, carpets (hot-water extraction), windows (interior), skirting boards, light switches, door frames, and general dusting throughout.</p>
+        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">How to Book</h2>
+        <p>Give us as much notice as you can — a week before your move-out date is ideal. We will arrange a time that works around your schedule and have the place sparkling before the keys go back.</p>
+      </div>
+    </div>
+  </article>
+  <CtaBanner headline="Moving Out Soon?" text="Book your end-of-tenancy clean and protect your deposit. We guarantee our work." />
+</SiteLayout>
+

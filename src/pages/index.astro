@@ -1,0 +1,84 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import TrustBar from '../components/TrustBar.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import ServiceAreaMap from '../components/ServiceAreaMap.astro';
+import services from '../data/services.json';
+---
+<SiteLayout>
+  <HeroSection
+    headline="Professional Cleaning<br />That Actually <span class='text-primary'>Makes a Difference</span>"
+    subheadline="Eco-friendly window, gutter and exterior cleaning across Epsom and Surrey. Family-run, fully insured, and trusted by hundreds of local homes and businesses."
+    ctaText="Get a Free Quote"
+    ctaHref="/quote/"
+    secondaryCtaText="Call 01372 898732"
+    secondaryCtaHref="tel:01372898732"
+  />
+  <TrustBar />
+  <section class="py-16 lg:py-20 bg-off-white">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl text-navy text-center mb-4">Our Cleaning Services</h2>
+      <p class="text-navy/60 text-center mb-12 max-w-2xl mx-auto">From gleaming windows to spotless ovens, we handle every type of clean — domestic and commercial — across Epsom and the surrounding Surrey towns.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {services.slice(0, 9).map((s) => (
+          <ServiceCard title={s.title} slug={s.slug} icon={s.icon} description={s.description} price={s.price} />
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a href="/services/" class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-heading font-bold px-8 py-3 rounded-full transition-colors">
+          View All Services
+        </a>
+      </div>
+    </div>
+  </section>
+  <ProcessSteps />
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="font-heading font-bold text-3xl text-navy mb-4">Who We Are</h2>
+          <p class="text-navy/70 leading-relaxed mb-4">ProGreen Clean is a family-run business rooted in Epsom, Surrey. For over ten years, we have been keeping local homes and businesses looking their best — using methods that are kinder to the environment and gentler on your property.</p>
+          <p class="text-navy/70 leading-relaxed mb-6">Every member of our team is fully trained, DBS checked and insured. We turn up on time, treat your property with care, and do not leave until the job meets our high standards.</p>
+          <a href="/about/" class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-heading font-bold px-8 py-3 rounded-full transition-colors">
+            Learn More About Us
+          </a>
+        </div>
+        <div class="bg-gradient-to-br from-aqua-light to-white rounded-2xl p-8 text-center">
+          <div class="grid grid-cols-2 gap-6">
+            <div><span class="block font-heading font-extrabold text-4xl text-primary">10+</span><span class="text-navy/60 text-sm">Years Experience</span></div>
+            <div><span class="block font-heading font-extrabold text-4xl text-primary">500+</span><span class="text-navy/60 text-sm">Happy Customers</span></div>
+            <div><span class="block font-heading font-extrabold text-4xl text-primary">12</span><span class="text-navy/60 text-sm">Services Offered</span></div>
+            <div><span class="block font-heading font-extrabold text-4xl text-primary">100%</span><span class="text-navy/60 text-sm">Satisfaction Guarantee</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-16 lg:py-20 bg-off-white">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 text-center">
+      <h2 class="font-heading font-bold text-3xl text-navy mb-4">What Our Customers Say</h2>
+      <p class="text-navy/60 mb-12 max-w-2xl mx-auto">We are proud of the feedback we receive. Genuine reviews from real customers will appear here soon.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-left">
+          <p class="text-navy/70 text-sm leading-relaxed mb-4 italic">"Genuine customer reviews will be displayed here once we have collected verified feedback."</p>
+          <span class="text-navy/40 text-sm font-semibold">— Review placeholder</span>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-left">
+          <p class="text-navy/70 text-sm leading-relaxed mb-4 italic">"We never publish fake reviews. This section will be updated with authentic testimonials."</p>
+          <span class="text-navy/40 text-sm font-semibold">— Review placeholder</span>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-left">
+          <p class="text-navy/70 text-sm leading-relaxed mb-4 italic">"Check back soon for real feedback from homeowners and businesses across Epsom and Surrey."</p>
+          <span class="text-navy/40 text-sm font-semibold">— Review placeholder</span>
+        </div>
+      </div>
+      <a href="/reviews/" class="inline-block mt-8 border-2 border-primary text-primary hover:bg-primary hover:text-white font-heading font-bold px-8 py-3 rounded-full transition-colors">Read All Reviews</a>
+    </div>
+  </section>
+  <ServiceAreaMap />
+  <CtaBanner />
+</SiteLayout>
+

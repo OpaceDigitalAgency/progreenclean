@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #00A99D;
+  --color-primary-dark: #008F85;
+  --color-secondary: #006B79;
+  --color-accent: #8BCB00;
+  --color-accent-dark: #79B300;
+  --color-navy: #1E2A32;
+  --color-off-white: #F7FAF9;
+  --color-card-bg: #EDF6F5;
+  --color-aqua-light: #E0F7F5;
+  --font-heading: 'Montserrat', Arial, sans-serif;
+  --font-body: 'Source Sans 3', Arial, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 100;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-primary);
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+

@@ -1,0 +1,90 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import FormShell from '../components/forms/FormShell.astro';
+import services from '../data/services.json';
+---
+<SiteLayout title="Get a Free Quote" description="Get an instant, no-obligation quote for professional cleaning services in Epsom and Surrey. Fast, simple, transparent pricing.">
+  <section class="relative overflow-hidden py-16 lg:py-20">
+    <div class="absolute inset-0 bg-gradient-to-br from-aqua-light via-white to-off-white -z-10"></div>
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+      <h1 class="font-heading font-extrabold text-4xl md:text-5xl text-navy leading-tight mb-4">Get Your <span class="text-primary">Free Quote</span></h1>
+      <p class="text-lg text-navy/70 mb-4 max-w-2xl">Tell us what you need and we will get back to you with a clear price — no hidden extras, no obligation.</p>
+    </div>
+  </section>
+  <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Get a Quote' }]} />
+  <section class="py-12 lg:py-16 bg-white">
+    <div class="max-w-2xl mx-auto px-4 lg:px-8">
+      <FormShell formName="Quote" successMessage="Thanks for your enquiry! We will review the details and get back to you with a quote within 24 hours.">
+        <fieldset class="space-y-4">
+          <legend class="font-heading font-bold text-xl text-navy mb-4">1. Which services do you need?</legend>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {services.map((s) => (
+              <label class="flex items-center gap-3 bg-off-white rounded-xl p-3 cursor-pointer hover:bg-aqua-light transition-colors border border-gray-100">
+                <input type="checkbox" name="services" value={s.title} class="w-5 h-5 rounded text-primary focus:ring-primary accent-primary" />
+                <span class="text-sm font-semibold text-navy">{s.title}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+        <fieldset class="space-y-4">
+          <legend class="font-heading font-bold text-xl text-navy mb-4">2. Your property details</legend>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="property-type" class="block text-sm font-semibold text-navy mb-1">Property type</label>
+              <select id="property-type" name="property-type" class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary bg-white">
+                <option value="">Select...</option>
+                <option>Flat / Apartment</option>
+                <option>Terraced house</option>
+                <option>Semi-detached house</option>
+                <option>Detached house</option>
+                <option>Bungalow</option>
+                <option>Commercial property</option>
+              </select>
+            </div>
+            <div>
+              <label for="bedrooms" class="block text-sm font-semibold text-navy mb-1">Number of bedrooms</label>
+              <select id="bedrooms" name="bedrooms" class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary bg-white">
+                <option value="">Select...</option>
+                <option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="postcode" class="block text-sm font-semibold text-navy mb-1">Postcode</label>
+            <input type="text" id="postcode" name="postcode" placeholder="e.g. KT18 7NS" class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary" required />
+          </div>
+        </fieldset>
+        <fieldset class="space-y-4">
+          <legend class="font-heading font-bold text-xl text-navy mb-4">3. Additional details</legend>
+          <div>
+            <label for="details" class="block text-sm font-semibold text-navy mb-1">Anything else we should know?</label>
+            <textarea id="details" name="details" rows="4" class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary" placeholder="Tell us about access, specific areas, preferred dates..."></textarea>
+          </div>
+        </fieldset>
+        <fieldset class="space-y-4">
+          <legend class="font-heading font-bold text-xl text-navy mb-4">4. Your contact details</legend>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="name" class="block text-sm font-semibold text-navy mb-1">Full name</label>
+              <input type="text" id="name" name="name" class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary" required />
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-semibold text-navy mb-1">Phone number</label>
+              <input type="tel" id="phone" name="phone" class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary" required />
+            </div>
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-semibold text-navy mb-1">Email address</label>
+            <input type="email" id="email" name="email" class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary" required />
+          </div>
+        </fieldset>
+        <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-heading font-bold px-8 py-4 rounded-full text-lg transition-colors shadow-lg shadow-primary/25 focus:outline-2 focus:outline-primary focus:outline-offset-2">
+          Request My Free Quote
+        </button>
+        <p class="text-center text-navy/40 text-xs">We will respond within 24 hours. Your details are never shared with third parties.</p>
+      </FormShell>
+    </div>
+  </section>
+</SiteLayout>
+

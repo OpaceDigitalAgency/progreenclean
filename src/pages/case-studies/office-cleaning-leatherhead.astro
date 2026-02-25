@@ -1,0 +1,27 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+---
+<SiteLayout title="Monthly Office Cleaning Contract in Leatherhead" description="A 3,000 sq ft office needed reliable, out-of-hours cleaning. We set up a flexible monthly contract.">
+  <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Case Studies', url: '/case-studies/' }, { name: 'Office Cleaning Leatherhead' }]} />
+  <article class="py-12 lg:py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 lg:px-8">
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="bg-primary/10 text-primary text-xs font-semibold px-2 py-1 rounded-full">Commercial Cleaning</span>
+      </div>
+      <h1 class="font-heading font-extrabold text-3xl md:text-4xl text-navy mb-6">Monthly Office Cleaning Contract in Leatherhead</h1>
+      <div class="prose max-w-none text-navy/70 leading-relaxed space-y-4">
+        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">The Brief</h2>
+        <p>A technology company in Leatherhead was unhappy with their existing cleaning contractor. Bins were missed, kitchens left dirty, and complaints from staff were piling up. They wanted a fresh start with a company that would actually turn up and do the job properly.</p>
+        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">What We Did</h2>
+        <p>We carried out a site visit, walked through the space with the office manager, and put together a cleaning schedule tailored to their needs. The office has 3,000 square feet across two floors, with a communal kitchen, four meeting rooms and two washrooms.</p>
+        <p>Our team cleans every Monday and Thursday evening between 6pm and 9pm. The scope includes vacuuming, mopping, desk and surface wiping, kitchen cleaning, washroom deep-clean, bin emptying and recycling.</p>
+        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">The Result</h2>
+        <p>Staff complaints stopped within the first week. The office manager said the difference was "night and day." We have been on-site twice a week for over a year now, and the contract has been extended with no price increase.</p>
+      </div>
+    </div>
+  </article>
+  <CtaBanner headline="Need Reliable Office Cleaning?" text="We work around your schedule, not the other way round. Let us put together a plan for your business." />
+</SiteLayout>
+

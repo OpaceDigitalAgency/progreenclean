@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+
+Sitemap: https://progreenclean.co.uk/sitemap-index.xml
+

@@ -1,0 +1,53 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import HeroSection from '../../components/HeroSection.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+
+const posts = [
+  {
+    title: 'How Often Should You Have Your Windows Cleaned?',
+    slug: 'how-often-window-cleaning',
+    excerpt: 'A practical look at cleaning frequency for residential and commercial windows in the UK — and why regular maintenance pays off.',
+    date: '2026-02-20',
+  },
+  {
+    title: 'Five Signs Your Gutters Need Clearing',
+    slug: 'signs-gutters-need-clearing',
+    excerpt: 'Blocked gutters cause more damage than most homeowners realise. Here are the warning signs to watch out for.',
+    date: '2026-02-10',
+  },
+  {
+    title: 'End of Tenancy Cleaning: What Landlords Actually Expect',
+    slug: 'end-of-tenancy-what-landlords-expect',
+    excerpt: 'Moving out? Here is a plain-English breakdown of what a proper end-of-tenancy clean covers — and how to get your deposit back.',
+    date: '2026-01-28',
+  },
+];
+---
+<SiteLayout title="Blog" description="Cleaning tips, guides and industry insights from the ProGreen Clean team. Practical advice for homeowners and businesses in Surrey.">
+  <HeroSection
+    headline="Tips, Guides &<br /><span class='text-primary'>Honest Advice</span>"
+    subheadline="Practical cleaning know-how from people who actually do the work. No waffle, no jargon — just useful stuff."
+    compact={true}
+  />
+  <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Blog' }]} />
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 lg:px-8">
+      <div class="space-y-8">
+        {posts.map((post) => (
+          <article class="bg-off-white rounded-2xl p-6 lg:p-8 border border-gray-100 hover:shadow-md transition-shadow">
+            <time datetime={post.date} class="text-sm text-navy/40 font-semibold">{new Date(post.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+            <h2 class="font-heading font-bold text-xl text-navy mt-2 mb-3">
+              <a href={`/blog/${post.slug}/`} class="hover:text-primary transition-colors">{post.title}</a>
+            </h2>
+            <p class="text-navy/60 text-sm leading-relaxed mb-4">{post.excerpt}</p>
+            <a href={`/blog/${post.slug}/`} class="text-primary font-heading font-bold text-sm hover:underline">Read more →</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+  <CtaBanner />
+</SiteLayout>
+
