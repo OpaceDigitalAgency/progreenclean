@@ -21,7 +21,7 @@ const {
   compact = false,
 } = Astro.props;
 ---
-<section class={`relative isolate ${compact ? 'py-16 lg:py-20 overflow-hidden' : 'pt-44 pb-40 lg:pt-56 lg:pb-52 min-h-[600px]'}`}>
+<section class={`relative isolate overflow-hidden ${compact ? 'py-16 lg:py-20' : 'pt-44 pb-0 lg:pt-56 min-h-screen'}`}>
   {!compact ? (
     <div class="absolute inset-0 -z-10">
       <img src="/hero-bg.jpg" alt="" class="absolute inset-0 w-full h-full object-cover object-top" aria-hidden="true" />
@@ -48,6 +48,8 @@ const {
     </div>
   </div>
 
+  <div class="absolute bottom-0 left-0 right-0 w-full">
+    <WaveDivider variant="teal-to-off-white" />
+  </div>
 </section>
-<WaveDivider variant="teal-to-off-white" />
 
