@@ -20,16 +20,17 @@ import services from '../data/services.json';
   />
   <TrustBar />
   <WaveDivider variant="white-to-off-white" />
-  <section class="py-16 lg:py-20 bg-off-white">
+  <section class="py-20 lg:py-28 bg-gradient-to-b from-aqua-light/30 via-white to-white relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-aqua-light/20 to-transparent -z-10"></div>
     <div class="max-w-7xl mx-auto px-4 lg:px-8">
-      <h2 class="font-heading font-bold text-3xl text-navy text-center mb-4">Our Professional Services</h2>
-      <p class="text-navy/60 text-center mb-12 max-w-2xl mx-auto">From gleaming windows to spotless ovens, we handle every type of clean — domestic and commercial — across Epsom and the surrounding Surrey towns.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <h2 class="font-heading font-bold text-4xl text-navy text-center mb-6">Our Professional Services</h2>
+      <p class="text-navy/60 text-center mb-16 max-w-3xl mx-auto text-lg">From gleaming windows to spotless ovens, we handle every type of clean — domestic and commercial — across Epsom and the surrounding Surrey towns.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {services.slice(0, 9).map((s) => (
           <ServiceCard title={s.title} slug={s.slug} icon={s.icon} description={s.description} />
         ))}
       </div>
-      <div class="text-center mt-10">
+      <div class="text-center mt-16">
         <a href="/services/" class="inline-block bg-accent hover:bg-accent-dark text-white font-heading font-bold px-8 py-3 rounded-full transition-all shadow-md hover:shadow-lg hover:scale-105">
           View All Services
         </a>
