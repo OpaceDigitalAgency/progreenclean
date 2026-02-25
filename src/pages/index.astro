@@ -26,7 +26,7 @@ import services from '../data/services.json';
       <p class="text-navy/60 text-center mb-12 max-w-2xl mx-auto">From gleaming windows to spotless ovens, we handle every type of clean — domestic and commercial — across Epsom and the surrounding Surrey towns.</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.slice(0, 9).map((s) => (
-          <ServiceCard title={s.title} slug={s.slug} icon={s.icon} description={s.description} price={s.price} />
+          <ServiceCard title={s.title} slug={s.slug} icon={s.icon} description={s.description} />
         ))}
       </div>
       <div class="text-center mt-10">
