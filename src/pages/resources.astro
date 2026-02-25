@@ -3,7 +3,9 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import WaveDivider from "../components/WaveDivider.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
+import TestimonialStrip from "../components/TestimonialStrip.astro";
 import CtaBanner from "../components/CtaBanner.astro";
+import reviews from "../data/reviews.json";
 
 const guides = [
   {
@@ -96,6 +98,7 @@ const guides = [
       </div>
     </div>
   </section>
+  <TestimonialStrip reviews={reviews} />
   <CtaBanner
     headline="Got a Question We Can Help With?"
     text="Drop us a line and we will do our best to point you in the right direction — no charge, no obligation."

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "paul-yell",
+    "name": "Paul",
+    "location": "Epsom",
+    "date": "2025-10-31",
+    "rating": 5,
+    "title": "Highly recommended",
+    "body": "I recently had the pleasure of using Progreen Clean for my home cleaning needs, and I couldn't be more satisfied! From the moment I contacted them, their customer service was outstanding. They were responsive, friendly, and incredibly knowledgeable about their services. The cleaning team arrived on time and was well-prepared. They paid attention to every detail, transforming my space into a sparkling clean haven. I was particularly impressed with their eco-friendly products, which left my home smelling fresh without any harsh chemicals. What stood out the most was their commitment to customer satisfaction; they took the time to understand my specific needs and tailored their services accordingly. I truly felt valued as a customer. I highly recommend Progreen Clean to anyone looking for a reliable and thorough cleaning service.",
+    "source": "Yell"
+  },
+  {
+    "id": "donna-yell",
+    "name": "Donna",
+    "location": "Epsom",
+    "date": "2025-10-30",
+    "rating": 5,
+    "title": "Excellent",
+    "body": "Excellent service from start to finish. I have two hard to reach windows which my previous window cleaner couldn't clean however Jamie managed to clean and I'm very happy.",
+    "source": "Yell"
+  },
+  {
+    "id": "kallum-yell",
+    "name": "Kallum",
+    "location": "Surrey",
+    "date": "2025-10-30",
+    "rating": 5,
+    "title": "5-star service",
+    "body": "5-star service highly recommend.",
+    "source": "Yell"
+  },
+  {
+    "id": "chris-yell",
+    "name": "Chris",
+    "location": "Epsom",
+    "date": "2025-10-30",
+    "rating": 5,
+    "title": "Excellent",
+    "body": "I needed a post construction clean after I fitted a new kitchen for my customer. ProGreen Clean was efficient and professional and was very happy and I'll be using them again thanks to all of you.",
+    "source": "Yell"
+  },
+  {
+    "id": "amij-yell",
+    "name": "Amij",
+    "location": "Surrey",
+    "date": "2025-10-30",
+    "rating": 5,
+    "title": "Superb service, very professional and polite at a fair price",
+    "body": "Our house is over 3 floors with roof and sky lights. The ProGreen Clean team arrived on time and didn't leave a corner undone across our windows and doors. They provide an excellent service with attention to detail at the right price.",
+    "source": "Yell"
+  },
+  {
+    "id": "ellen-checkatrade",
+    "name": "Ellen Finlay",
+    "location": "Epsom",
+    "date": "2025-10-26",
+    "rating": 5,
+    "title": "Conservatory and window cleaning",
+    "body": "My conservatory roof hadn't been cleaned in almost a decade but the results are amazing! Jamie was meticulous and took his time to make sure my conservatory and windows were immaculate and streak free! I'm so pleased — I'll be using ProGreen Clean again.",
+    "source": "Checkatrade"
+  },
+  {
+    "id": "donna-checkatrade",
+    "name": "Donna",
+    "location": "Epsom",
+    "date": "2025-10-15",
+    "rating": 5,
+    "title": "Whole house clean including carpets and windows",
+    "body": "Highly recommended! From the first instance I couldn't fault them at all. Such lovely people and the clean was absolutely superb! Not a single spot left untouched, my windows are gleaming. I couldn't believe they managed to get them so clean. Kind regards and thank you.",
+    "source": "Checkatrade"
+  },
+  {
+    "id": "sophie-facebook",
+    "name": "Sophie Rowles",
+    "location": "Surrey",
+    "date": "2025-02-21",
+    "rating": 5,
+    "title": "Windows look amazing",
+    "body": "Great job, windows look amazing! Friendly, on time, and good value. Would definitely recommend.",
+    "source": "Facebook"
+  },
+  {
+    "id": "sian-facebook",
+    "name": "Sian Elizabeth",
+    "location": "Surrey",
+    "date": "2025-12-18",
+    "rating": 5,
+    "title": "Highly recommended",
+    "body": "Highly recommended pro green clean!!",
+    "source": "Facebook"
+  }
+]

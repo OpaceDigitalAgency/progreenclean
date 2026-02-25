@@ -4,10 +4,12 @@ import PageHero from "../../components/PageHero.astro";
 import WaveDivider from "../../components/WaveDivider.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import FaqAccordion from "../../components/FaqAccordion.astro";
+import TestimonialStrip from "../../components/TestimonialStrip.astro";
 import CtaBanner from "../../components/CtaBanner.astro";
 import ServiceIcon from "../../components/ServiceIcon.astro";
 import { generateServiceSchema, generateFaqSchema } from "../../utils/seo.js";
 import services from "../../data/services.json";
+import reviews from "../../data/reviews.json";
 
 export function getStaticPaths() {
   return services.map((s) => ({
@@ -100,6 +102,10 @@ const faqSchema = generateFaqSchema(service.faqs);
       </div>
     </div>
   </section>
+  <TestimonialStrip
+    reviews={reviews}
+    heading="What Customers Say About Our Work"
+  />
   <CtaBanner
     headline={`Ready to Book Your ${service.title}?`}
     text="Get a free, no-obligation quote in under two minutes — or call us and we will talk you through the options."

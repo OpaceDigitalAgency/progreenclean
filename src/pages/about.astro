@@ -3,7 +3,9 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import WaveDivider from "../components/WaveDivider.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
+import TestimonialStrip from "../components/TestimonialStrip.astro";
 import CtaBanner from "../components/CtaBanner.astro";
+import reviews from "../data/reviews.json";
 ---
 
 <SiteLayout
@@ -119,33 +121,40 @@ import CtaBanner from "../components/CtaBanner.astro";
             class="material-symbols-rounded text-4xl text-primary mb-2 block"
             >shield</span
           ><span class="font-heading font-semibold text-sm text-navy"
-            >Public Liability Insured</span>
+            >Public Liability Insured</span
+          >
         </div>
         <div class="bg-white rounded-xl p-6 shadow-sm">
           <span
             class="material-symbols-rounded text-4xl text-primary mb-2 block"
             >badge</span
           ><span class="font-heading font-semibold text-sm text-navy"
-            >DBS Checked Staff</span>
+            >DBS Checked Staff</span
+          >
         </div>
         <div class="bg-white rounded-xl p-6 shadow-sm">
           <span
             class="material-symbols-rounded text-4xl text-primary mb-2 block"
             >apartment</span
           ><span class="font-heading font-semibold text-sm text-navy"
-            >Companies House Registered</span>
+            >Companies House Registered</span
+          >
         </div>
         <div class="bg-white rounded-xl p-6 shadow-sm">
           <span
             class="material-symbols-rounded text-4xl text-primary mb-2 block"
             >eco</span
           ><span class="font-heading font-semibold text-sm text-navy"
-            >Eco-Friendly Methods</span>
+            >Eco-Friendly Methods</span
+          >
         </div>
       </div>
     </div>
   </section>
-  <WaveDivider variant="teal-to-white" />
+  <TestimonialStrip
+    reviews={reviews}
+    heading="Trusted by Customers Across Surrey"
+  />
   <CtaBanner
     headline="Want to Work with a Team That Cares?"
     text="Drop us a line or give us a ring. We are always happy to chat about your cleaning needs — no hard sell, no pressure."

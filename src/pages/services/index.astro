@@ -4,8 +4,10 @@ import PageHero from "../../components/PageHero.astro";
 import WaveDivider from "../../components/WaveDivider.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import ServiceCard from "../../components/ServiceCard.astro";
+import TestimonialStrip from "../../components/TestimonialStrip.astro";
 import CtaBanner from "../../components/CtaBanner.astro";
 import services from "../../data/services.json";
+import reviews from "../../data/reviews.json";
 ---
 
 <SiteLayout
@@ -71,5 +73,6 @@ import services from "../../data/services.json";
       </div>
     </div>
   </section>
+  <TestimonialStrip reviews={reviews} />
   <CtaBanner />
 </SiteLayout>
