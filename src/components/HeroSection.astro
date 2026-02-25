@@ -12,32 +12,58 @@ interface Props {
 const {
   headline,
   subheadline,
-  ctaText = 'Get a Free Quote',
+  ctaText = 'Get an Instant Quote',
   ctaHref = '/quote/',
   secondaryCtaText,
   secondaryCtaHref,
   compact = false,
 } = Astro.props;
 ---
-<section class={`relative overflow-hidden ${compact ? 'py-16 lg:py-20' : 'min-h-[calc(100vh-5rem)] flex items-center py-20'}`}>
-  <div class="absolute inset-0 bg-gradient-to-br from-aqua-light via-white to-off-white -z-10"></div>
-  <div class="absolute top-10 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl -z-10"></div>
-  <div class="absolute bottom-10 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl -z-10"></div>
+<section class={`relative overflow-hidden ${compact ? 'py-16 lg:py-20' : 'py-16 lg:py-24'}`}>
+  <div class="absolute inset-0 bg-gradient-to-br from-[#E0F7F5] via-[#EDF6F5] to-white -z-10"></div>
+  <div class="absolute top-10 right-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+  <div class="absolute bottom-20 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl -z-10"></div>
   <div class="max-w-7xl mx-auto px-4 lg:px-8 w-full">
-    <div class="max-w-3xl">
-      <h1 class="font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl text-navy leading-tight mb-6" set:html={headline} />
-      {subheadline && <p class="text-lg md:text-xl text-navy/70 mb-8 leading-relaxed max-w-2xl">{subheadline}</p>}
-      <div class="flex flex-wrap gap-4">
-        <a href={ctaHref} class="inline-block bg-primary hover:bg-primary-dark text-white font-heading font-bold px-8 py-4 rounded-full text-lg transition-colors shadow-lg shadow-primary/25 focus:outline-2 focus:outline-primary focus:outline-offset-2">
-          {ctaText}
-        </a>
-        {secondaryCtaText && secondaryCtaHref && (
-          <a href={secondaryCtaHref} class="inline-block bg-white hover:bg-gray-50 text-navy font-heading font-bold px-8 py-4 rounded-full text-lg transition-colors border-2 border-navy/10 focus:outline-2 focus:outline-primary focus:outline-offset-2">
-            {secondaryCtaText}
+    <div class={`${compact ? '' : 'grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'}`}>
+      <div class={compact ? 'max-w-3xl' : ''}>
+        <h1 class="font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl text-navy leading-tight mb-6" set:html={headline} />
+        {subheadline && <p class="text-lg md:text-xl text-navy/70 mb-8 leading-relaxed max-w-xl">{subheadline}</p>}
+        <div class="flex flex-wrap gap-4">
+          <a href={ctaHref} class="inline-block bg-accent hover:bg-accent-dark text-white font-heading font-bold px-8 py-4 rounded-full text-lg transition-colors shadow-lg shadow-accent/25 focus:outline-2 focus:outline-accent focus:outline-offset-2">
+            {ctaText}
           </a>
-        )}
+          {secondaryCtaText && secondaryCtaHref && (
+            <a href={secondaryCtaHref} class="inline-flex items-center gap-2 bg-navy hover:bg-navy/90 text-white font-heading font-bold px-8 py-4 rounded-full text-lg transition-colors focus:outline-2 focus:outline-navy focus:outline-offset-2">
+              <span class="material-symbols-rounded text-xl">phone</span>{secondaryCtaText}
+            </a>
+          )}
+        </div>
       </div>
+      {!compact && (
+        <div class="relative hidden lg:block">
+          <div class="relative w-full aspect-[4/3] rounded-3xl overflow-hidden bg-gradient-to-br from-primary/10 to-aqua-light shadow-xl">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center">
+                <div class="w-32 h-32 mx-auto rounded-full bg-primary/15 flex items-center justify-center mb-4">
+                  <span class="material-symbols-rounded text-7xl text-primary">house</span>
+                </div>
+                <div class="w-20 h-20 mx-auto rounded-full bg-white shadow-lg flex items-center justify-center -mt-8 relative z-10 border-4 border-white">
+                  <img src="/logo.jpg" alt="" class="w-14 h-auto" aria-hidden="true" />
+                </div>
+              </div>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent"></div>
+          </div>
+        </div>
+      )}
     </div>
   </div>
+  {!compact && (
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full block" preserveAspectRatio="none">
+        <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#F7FAF9"/>
+      </svg>
+    </div>
+  )}
 </section>
 

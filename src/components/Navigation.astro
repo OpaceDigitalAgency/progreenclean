@@ -14,9 +14,8 @@ const navLinks = [
 ---
 <header class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm">
   <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 lg:px-8">
-    <a href="/" class="flex items-center gap-2" aria-label="ProGreen Clean home">
-      <span class="text-primary font-heading font-extrabold text-2xl lg:text-3xl">ProGreen</span>
-      <span class="text-accent font-heading font-bold text-2xl lg:text-3xl">Clean</span>
+    <a href="/" class="flex items-center" aria-label="ProGreen Clean home">
+      <img src="/logo.jpg" alt="ProGreen Clean" width="571" height="127" class="h-10 lg:h-12 w-auto" />
     </a>
     <nav class="nav hidden lg:flex items-center gap-6" aria-label="Primary navigation">
       {navLinks.map((link) => (
@@ -45,7 +44,7 @@ const navLinks = [
       <a href="tel:01372898732" class="font-heading font-semibold text-navy text-sm hover:text-primary transition-colors">
         <span class="material-symbols-rounded align-middle mr-1 text-primary">phone</span>01372 898732
       </a>
-      <a href="/quote/" class="inline-block bg-primary hover:bg-primary-dark text-white font-heading font-bold text-sm px-6 py-3 rounded-full transition-colors focus:outline-2 focus:outline-primary focus:outline-offset-2">
+      <a href="/quote/" class="inline-block bg-accent hover:bg-accent-dark text-white font-heading font-bold text-sm px-6 py-3 rounded-full transition-colors focus:outline-2 focus:outline-accent focus:outline-offset-2">
         Get Quote
       </a>
     </div>
@@ -60,7 +59,7 @@ const navLinks = [
     <a href="tel:01372898732" class="flex items-center gap-2 font-heading font-semibold text-navy mb-4">
       <span class="material-symbols-rounded text-primary">phone</span>01372 898732
     </a>
-    <a href="/quote/" class="block w-full text-center bg-primary hover:bg-primary-dark text-white font-heading font-bold px-6 py-3 rounded-full transition-colors mb-4">Get Quote</a>
+    <a href="/quote/" class="block w-full text-center bg-accent hover:bg-accent-dark text-white font-heading font-bold px-6 py-3 rounded-full transition-colors mb-4">Get Quote</a>
     {navLinks.map((link) => (
       <div>
         <a href={link.href}
