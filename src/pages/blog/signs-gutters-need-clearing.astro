@@ -1,40 +1,122 @@
 ---
-import SiteLayout from '../../layouts/SiteLayout.astro';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import CtaBanner from '../../components/CtaBanner.astro';
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import WaveDivider from "../../components/WaveDivider.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import CtaBanner from "../../components/CtaBanner.astro";
 
 const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: 'Five Signs Your Gutters Need Clearing',
-  datePublished: '2026-02-10',
-  author: { '@type': 'Organization', name: 'ProGreen Clean' },
-  publisher: { '@type': 'Organization', name: 'ProGreen Clean' },
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Five Signs Your Gutters Need Clearing",
+  datePublished: "2026-02-10",
+  image:
+    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80",
+  author: { "@type": "Organization", name: "ProGreen Clean" },
+  publisher: { "@type": "Organization", name: "ProGreen Clean" },
 };
 ---
-<SiteLayout title="Five Signs Your Gutters Need Clearing" description="Blocked gutters cause more damage than most homeowners realise. Here are the warning signs to watch out for." schemas={[articleSchema]}>
-  <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Blog', url: '/blog/' }, { name: 'Five Signs Your Gutters Need Clearing' }]} />
+
+<SiteLayout
+  title="Five Signs Your Gutters Need Clearing"
+  description="Blocked gutters cause more damage than most homeowners realise. Here are the warning signs to watch out for."
+  schemas={[articleSchema]}
+>
+  <PageHero
+    headline="Five Signs Your <span class='text-primary'>Gutters Need Clearing</span>"
+    subheadline="Blocked gutters cause more damage than most homeowners realise. Here are the warning signs to watch out for before things get expensive."
+    ctaText="Book a Gutter Clean"
+    ctaHref="/quote/"
+  />
+  <WaveDivider variant="teal-to-white" />
+  <Breadcrumbs
+    items={[
+      { name: "Home", url: "/" },
+      { name: "Blog", url: "/blog/" },
+      { name: "Five Signs Your Gutters Need Clearing" },
+    ]}
+  />
   <article class="py-12 lg:py-16 bg-white">
     <div class="max-w-3xl mx-auto px-4 lg:px-8">
-      <time datetime="2026-02-10" class="text-sm text-navy/40 font-semibold">10 February 2026</time>
-      <h1 class="font-heading font-extrabold text-3xl md:text-4xl text-navy mt-3 mb-6">Five Signs Your Gutters Need Clearing</h1>
+      <div class="flex items-center gap-4 mb-6">
+        <span
+          class="bg-[#dfedea] text-primary text-xs font-heading font-bold px-3 py-1 rounded-full"
+          >Gutter Cleaning</span
+        >
+        <time datetime="2026-02-10" class="text-sm text-navy/40 font-semibold"
+          >10 February 2026</time
+        >
+        <span class="text-navy/40 text-xs">3 min read</span>
+      </div>
+      <img
+        src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80"
+        alt="Close up of a house roofline with gutters and autumn leaves"
+        width="1200"
+        height="675"
+        class="w-full rounded-2xl object-cover mb-10"
+        loading="eager"
+      />
       <div class="prose max-w-none text-navy/70 leading-relaxed space-y-4">
-        <p>Gutters are one of those things you never think about until something goes wrong. And by that point, the damage can be expensive. Here are five red flags that mean you should get them checked.</p>
-        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">1. Water Spilling Over the Sides</h2>
-        <p>During rain, water should flow through the gutter and down the drainpipe. If it is pouring over the edge like a waterfall, something is blocking the channel. Leaves, moss and bird nests are the usual culprits.</p>
-        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">2. Plants Growing in the Gutter</h2>
-        <p>If you can see weeds or even small plants sprouting from your gutter line, there is enough compacted debris up there to act as soil. That is a clear sign things have been left too long.</p>
-        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">3. Staining on External Walls</h2>
-        <p>Green or brown streaks running down your brickwork usually mean water is overflowing and sitting against the wall. Left unchecked, this leads to damp penetration and interior damage.</p>
-        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">4. Sagging Gutters</h2>
-        <p>Gutters that dip or pull away from the fascia are carrying too much weight. Wet debris is surprisingly heavy, and it puts strain on brackets and joints.</p>
-        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">5. Damp Patches Inside</h2>
-        <p>If you have noticed damp on internal walls near the roofline, blocked gutters could be the cause. Water finds the path of least resistance, and a full gutter pushes moisture into places it should never reach.</p>
-        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">What to Do About It</h2>
-        <p>Book a gutter clean before the problem gets worse. Our SkyVac system clears everything from ground level — no ladders, no fuss. We also inspect joints and downpipes as part of every clean, so you will know exactly what condition your gutters are in.</p>
+        <p>
+          Gutters are one of those things you never think about until something
+          goes wrong. And by that point, the damage can be expensive. Here are
+          five red flags that mean you should get them checked.
+        </p>
+        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">
+          1. Water Spilling Over the Sides
+        </h2>
+        <p>
+          During rain, water should flow through the gutter and down the
+          drainpipe. If it is pouring over the edge like a waterfall, something
+          is blocking the channel. Leaves, moss and bird nests are the usual
+          culprits.
+        </p>
+        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">
+          2. Plants Growing in the Gutter
+        </h2>
+        <p>
+          If you can see weeds or even small plants sprouting from your gutter
+          line, there is enough compacted debris up there to act as soil. That
+          is a clear sign things have been left too long.
+        </p>
+        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">
+          3. Staining on External Walls
+        </h2>
+        <p>
+          Green or brown streaks running down your brickwork usually mean water
+          is overflowing and sitting against the wall. Left unchecked, this
+          leads to damp penetration and interior damage.
+        </p>
+        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">
+          4. Sagging Gutters
+        </h2>
+        <p>
+          Gutters that dip or pull away from the fascia are carrying too much
+          weight. Wet debris is surprisingly heavy, and it puts strain on
+          brackets and joints.
+        </p>
+        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">
+          5. Damp Patches Inside
+        </h2>
+        <p>
+          If you have noticed damp on internal walls near the roofline, blocked
+          gutters could be the cause. Water finds the path of least resistance,
+          and a full gutter pushes moisture into places it should never reach.
+        </p>
+        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">
+          What to Do About It
+        </h2>
+        <p>
+          Book a gutter clean before the problem gets worse. Our SkyVac system
+          clears everything from ground level — no ladders, no fuss. We also
+          inspect joints and downpipes as part of every clean, so you will know
+          exactly what condition your gutters are in.
+        </p>
       </div>
     </div>
   </article>
-  <CtaBanner headline="Worried About Your Gutters?" text="We will have them cleared and inspected in no time. Book your gutter clean today." />
+  <CtaBanner
+    headline="Worried About Your Gutters?"
+    text="We will have them cleared and inspected in no time. Book your gutter clean today."
+  />
 </SiteLayout>
-

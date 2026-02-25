@@ -1,36 +1,110 @@
 ---
-import SiteLayout from '../../layouts/SiteLayout.astro';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import CtaBanner from '../../components/CtaBanner.astro';
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import WaveDivider from "../../components/WaveDivider.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import CtaBanner from "../../components/CtaBanner.astro";
 
 const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: 'How Often Should You Have Your Windows Cleaned?',
-  datePublished: '2026-02-20',
-  author: { '@type': 'Organization', name: 'ProGreen Clean' },
-  publisher: { '@type': 'Organization', name: 'ProGreen Clean' },
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "How Often Should You Have Your Windows Cleaned?",
+  datePublished: "2026-02-20",
+  image:
+    "https://images.unsplash.com/photo-1527515637462-cff94aca55fc?w=1200&q=80",
+  author: { "@type": "Organization", name: "ProGreen Clean" },
+  publisher: { "@type": "Organization", name: "ProGreen Clean" },
 };
 ---
-<SiteLayout title="How Often Should You Have Your Windows Cleaned?" description="A practical look at cleaning frequency for residential and commercial windows in the UK — and why regular maintenance pays off." schemas={[articleSchema]}>
-  <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Blog', url: '/blog/' }, { name: 'How Often Should You Have Your Windows Cleaned?' }]} />
+
+<SiteLayout
+  title="How Often Should You Have Your Windows Cleaned?"
+  description="A practical look at cleaning frequency for residential and commercial windows in the UK — and why regular maintenance pays off."
+  schemas={[articleSchema]}
+>
+  <PageHero
+    headline="How Often Should You Have Your <span class='text-primary'>Windows Cleaned?</span>"
+    subheadline="A practical look at cleaning frequency for residential and commercial windows in the UK — and why regular maintenance pays off."
+    ctaText="Book a Regular Clean"
+    ctaHref="/quote/"
+  />
+  <WaveDivider variant="teal-to-white" />
+  <Breadcrumbs
+    items={[
+      { name: "Home", url: "/" },
+      { name: "Blog", url: "/blog/" },
+      { name: "How Often Should You Have Your Windows Cleaned?" },
+    ]}
+  />
   <article class="py-12 lg:py-16 bg-white">
     <div class="max-w-3xl mx-auto px-4 lg:px-8">
-      <time datetime="2026-02-20" class="text-sm text-navy/40 font-semibold">20 February 2026</time>
-      <h1 class="font-heading font-extrabold text-3xl md:text-4xl text-navy mt-3 mb-6">How Often Should You Have Your Windows Cleaned?</h1>
+      <div class="flex items-center gap-4 mb-6">
+        <span
+          class="bg-[#dfedea] text-primary text-xs font-heading font-bold px-3 py-1 rounded-full"
+          >Window Cleaning</span
+        >
+        <time datetime="2026-02-20" class="text-sm text-navy/40 font-semibold"
+          >20 February 2026</time
+        >
+        <span class="text-navy/40 text-xs">4 min read</span>
+      </div>
+      <img
+        src="https://images.unsplash.com/photo-1527515637462-cff94aca55fc?w=1200&q=80"
+        alt="Person cleaning a large glass window on a modern building"
+        width="1200"
+        height="675"
+        class="w-full rounded-2xl object-cover mb-10"
+        loading="eager"
+      />
       <div class="prose max-w-none text-navy/70 leading-relaxed space-y-4">
-        <p>There is no single right answer, because it depends on where you live, how exposed your windows are, and what kind of property you have got. But here is what we have learned from a decade of cleaning windows across Surrey.</p>
-        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">Residential Properties</h2>
-        <p>For most homes, every four to six weeks hits the sweet spot. That is frequent enough to stop grime building up, but not so often that you are spending money for no visible improvement. If your house is next to a busy road or surrounded by trees, you might want to move closer to the four-week end.</p>
-        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">Commercial Properties</h2>
-        <p>First impressions count. A shop front or office with dirty windows does not exactly scream "professional." Most of our commercial clients book monthly cleans, though high-footfall locations like restaurants and estate agents sometimes ask for fortnightly.</p>
-        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">What Happens If You Leave It Too Long?</h2>
-        <p>Hard-water staining is the big one. When mineral deposits sit on glass for months, they etch into the surface and become permanently visible. Regular cleaning prevents that. You also get less mould around frames and seals, which keeps everything looking — and smelling — fresher.</p>
-        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">Our Recommendation</h2>
-        <p>Book a regular schedule and stick to it. We offer four-weekly and six-weekly packages at competitive rates, and you can cancel or pause whenever you like. Once you see the difference consistent cleaning makes, you will wonder why you ever left it.</p>
+        <p>
+          There is no single right answer, because it depends on where you live,
+          how exposed your windows are, and what kind of property you have got.
+          But here is what we have learned from a decade of cleaning windows
+          across Surrey.
+        </p>
+        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">
+          Residential Properties
+        </h2>
+        <p>
+          For most homes, every four to six weeks hits the sweet spot. That is
+          frequent enough to stop grime building up, but not so often that you
+          are spending money for no visible improvement. If your house is next
+          to a busy road or surrounded by trees, you might want to move closer
+          to the four-week end.
+        </p>
+        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">
+          Commercial Properties
+        </h2>
+        <p>
+          First impressions count. A shop front or office with dirty windows
+          does not exactly scream "professional." Most of our commercial clients
+          book monthly cleans, though high-footfall locations like restaurants
+          and estate agents sometimes ask for fortnightly.
+        </p>
+        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">
+          What Happens If You Leave It Too Long?
+        </h2>
+        <p>
+          Hard-water staining is the big one. When mineral deposits sit on glass
+          for months, they etch into the surface and become permanently visible.
+          Regular cleaning prevents that. You also get less mould around frames
+          and seals, which keeps everything looking — and smelling — fresher.
+        </p>
+        <h2 class="font-heading font-bold text-xl text-navy mt-8 mb-3">
+          Our Recommendation
+        </h2>
+        <p>
+          Book a regular schedule and stick to it. We offer four-weekly and
+          six-weekly packages at competitive rates, and you can cancel or pause
+          whenever you like. Once you see the difference consistent cleaning
+          makes, you will wonder why you ever left it.
+        </p>
       </div>
     </div>
   </article>
-  <CtaBanner headline="Need Your Windows Done?" text="Book a regular window clean and we will keep them spotless year-round." />
+  <CtaBanner
+    headline="Need Your Windows Done?"
+    text="Book a regular window clean and we will keep them spotless year-round."
+  />
 </SiteLayout>
-

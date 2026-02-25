@@ -1,53 +1,122 @@
 ---
-import SiteLayout from '../../layouts/SiteLayout.astro';
-import HeroSection from '../../components/HeroSection.astro';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import CtaBanner from '../../components/CtaBanner.astro';
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import WaveDivider from "../../components/WaveDivider.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import CtaBanner from "../../components/CtaBanner.astro";
 
 const posts = [
   {
-    title: 'How Often Should You Have Your Windows Cleaned?',
-    slug: 'how-often-window-cleaning',
-    excerpt: 'A practical look at cleaning frequency for residential and commercial windows in the UK — and why regular maintenance pays off.',
-    date: '2026-02-20',
+    title: "How Often Should You Have Your Windows Cleaned?",
+    slug: "how-often-window-cleaning",
+    excerpt:
+      "A practical look at cleaning frequency for residential and commercial windows in the UK — and why regular maintenance pays off.",
+    date: "2026-02-20",
+    readMins: 4,
+    category: "Window Cleaning",
+    image:
+      "https://images.unsplash.com/photo-1527515637462-cff94aca55fc?w=800&q=80",
+    imageAlt: "Person cleaning a large glass window on a modern building",
   },
   {
-    title: 'Five Signs Your Gutters Need Clearing',
-    slug: 'signs-gutters-need-clearing',
-    excerpt: 'Blocked gutters cause more damage than most homeowners realise. Here are the warning signs to watch out for.',
-    date: '2026-02-10',
+    title: "Five Signs Your Gutters Need Clearing",
+    slug: "signs-gutters-need-clearing",
+    excerpt:
+      "Blocked gutters cause more damage than most homeowners realise. Here are the warning signs to watch out for.",
+    date: "2026-02-10",
+    readMins: 3,
+    category: "Gutter Cleaning",
+    image:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    imageAlt: "Close up of a house roofline with gutters and autumn leaves",
   },
   {
-    title: 'End of Tenancy Cleaning: What Landlords Actually Expect',
-    slug: 'end-of-tenancy-what-landlords-expect',
-    excerpt: 'Moving out? Here is a plain-English breakdown of what a proper end-of-tenancy clean covers — and how to get your deposit back.',
-    date: '2026-01-28',
+    title: "End of Tenancy Cleaning: What Landlords Actually Expect",
+    slug: "end-of-tenancy-what-landlords-expect",
+    excerpt:
+      "Moving out? Here is a plain-English breakdown of what a proper end-of-tenancy clean covers — and how to get your deposit back.",
+    date: "2026-01-28",
+    readMins: 5,
+    category: "Domestic Cleaning",
+    image:
+      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80",
+    imageAlt: "Professional cleaner in uniform cleaning a bright kitchen",
   },
 ];
 ---
-<SiteLayout title="Blog" description="Cleaning tips, guides and industry insights from the ProGreen Clean team. Practical advice for homeowners and businesses in Surrey.">
-  <HeroSection
-    headline="Tips, Guides &<br /><span class='text-primary'>Honest Advice</span>"
+
+<SiteLayout
+  title="Blog"
+  description="Cleaning tips, guides and industry insights from the ProGreen Clean team. Practical advice for homeowners and businesses in Surrey."
+>
+  <PageHero
+    headline="Tips, Guides & <span class='text-primary'>Honest Advice</span>"
     subheadline="Practical cleaning know-how from people who actually do the work. No waffle, no jargon — just useful stuff."
-    compact={true}
   />
-  <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Blog' }]} />
+  <WaveDivider variant="teal-to-white" />
+  <Breadcrumbs items={[{ name: "Home", url: "/" }, { name: "Blog" }]} />
   <section class="py-16 lg:py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-4 lg:px-8">
-      <div class="space-y-8">
-        {posts.map((post) => (
-          <article class="bg-off-white rounded-2xl p-6 lg:p-8 border border-gray-100 hover:shadow-md transition-shadow">
-            <time datetime={post.date} class="text-sm text-navy/40 font-semibold">{new Date(post.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
-            <h2 class="font-heading font-bold text-xl text-navy mt-2 mb-3">
-              <a href={`/blog/${post.slug}/`} class="hover:text-primary transition-colors">{post.title}</a>
-            </h2>
-            <p class="text-navy/60 text-sm leading-relaxed mb-4">{post.excerpt}</p>
-            <a href={`/blog/${post.slug}/`} class="text-primary font-heading font-bold text-sm hover:underline">Read more →</a>
-          </article>
-        ))}
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          posts.map((post) => (
+            <article class="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-all overflow-hidden flex flex-col">
+              <a
+                href={`/blog/${post.slug}/`}
+                class="block overflow-hidden aspect-[16/9] bg-gray-100"
+              >
+                <img
+                  src={post.image}
+                  alt={post.imageAlt}
+                  width="800"
+                  height="450"
+                  loading="lazy"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </a>
+              <div class="p-6 flex flex-col flex-1">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="bg-[#dfedea] text-primary text-xs font-heading font-bold px-3 py-1 rounded-full">
+                    {post.category}
+                  </span>
+                  <span class="text-navy/40 text-xs">
+                    {post.readMins} min read
+                  </span>
+                </div>
+                <time
+                  datetime={post.date}
+                  class="text-xs text-navy/40 font-semibold mb-2"
+                >
+                  {new Date(post.date).toLocaleDateString("en-GB", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  })}
+                </time>
+                <h2 class="font-heading font-bold text-xl text-navy mt-1 mb-3 leading-snug group-hover:text-primary transition-colors">
+                  <a href={`/blog/${post.slug}/`}>{post.title}</a>
+                </h2>
+                <p class="text-navy/60 text-sm leading-relaxed mb-4 flex-1">
+                  {post.excerpt}
+                </p>
+                <a
+                  href={`/blog/${post.slug}/`}
+                  class="inline-flex items-center gap-2 text-primary font-heading font-bold text-sm hover:underline mt-auto"
+                >
+                  Read article{" "}
+                  <span class="material-symbols-rounded text-base">
+                    arrow_forward
+                  </span>
+                </a>
+              </div>
+            </article>
+          ))
+        }
       </div>
     </div>
   </section>
-  <CtaBanner />
+  <CtaBanner
+    headline="Want Cleaning Advice Specific to Your Property?"
+    text="Give us a ring or drop us a message — we are always happy to help, no obligation."
+  />
 </SiteLayout>
-
