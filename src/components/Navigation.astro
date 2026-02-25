@@ -1,116 +1,192 @@
 ---
-import services from '../data/services.json';
+import services from "../data/services.json";
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about/' },
-  { label: 'Services', href: '/services/', children: services.map(s => ({ label: s.title, href: `/services/${s.slug}/` })) },
-  { label: 'Pricing', href: '/quote/' },
-  { label: 'Reviews', href: '/reviews/' },
-  { label: 'Blog', href: '/blog/' },
-  { label: 'Contact', href: '/contact/' },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about/" },
+  {
+    label: "Services",
+    href: "/services/",
+    children: services.map((s) => ({
+      label: s.title,
+      href: `/services/${s.slug}/`,
+    })),
+  },
+  { label: "Pricing", href: "/quote/" },
+  { label: "Reviews", href: "/reviews/" },
+  { label: "Blog", href: "/blog/" },
+  { label: "Contact", href: "/contact/" },
 ];
 ---
+
 <header class="sticky top-0 z-50 bg-white shadow-sm">
-  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 lg:px-8">
+  <div
+    class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 lg:px-8"
+  >
     <a href="/" class="flex items-center" aria-label="ProGreen Clean home">
-      <img src="/logo.jpg" alt="ProGreen Clean" width="571" height="127" class="h-10 lg:h-12 w-auto" />
+      <img
+        src="/logo.jpg"
+        alt="ProGreen Clean"
+        width="571"
+        height="127"
+        class="h-10 lg:h-12 w-auto"
+      />
     </a>
-    <nav class="nav hidden lg:flex items-center gap-6" aria-label="Primary navigation">
-      {navLinks.map((link) => (
-        <div class="relative group">
-          <a href={link.href}
-             class={`font-heading font-semibold text-sm tracking-wide transition-colors hover:text-primary focus:text-primary focus:outline-2 focus:outline-primary ${currentPath === link.href ? 'text-primary border-b-2 border-primary pb-0.5' : 'text-navy'}`}
-             aria-current={currentPath === link.href ? 'page' : undefined}>
-            {link.label}
-          </a>
-          {link.children && (
-            <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 z-50">
-              <div class="bg-white rounded-xl shadow-lg border border-gray-100 py-2 min-w-[220px]">
-                {link.children.map((child) => (
-                  <a href={child.href} class="block px-4 py-2 text-sm text-navy hover:bg-aqua-light hover:text-primary transition-colors">
-                    {child.label}
-                  </a>
-                ))}
+    <nav
+      class="nav hidden lg:flex items-center gap-6"
+      aria-label="Primary navigation"
+    >
+      {
+        navLinks.map((link) => (
+          <div class="relative group">
+            <a
+              href={link.href}
+              class={`font-heading font-semibold text-sm tracking-wide transition-colors duration-300 hover:text-primary focus:text-primary focus:outline-2 focus:outline-primary ${currentPath === link.href ? "text-primary border-b-2 border-primary pb-0.5" : "text-navy"}`}
+              aria-current={currentPath === link.href ? "page" : undefined}
+            >
+              {link.label}
+            </a>
+            {link.children && (
+              <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 z-50">
+                <div class="bg-white rounded-xl shadow-lg border border-gray-100 py-2 min-w-[220px]">
+                  {link.children.map((child) => (
+                    <a
+                      href={child.href}
+                      class="block px-4 py-2 text-sm text-navy hover:bg-aqua-light hover:text-primary transition-colors duration-300 focus:outline-2 focus:outline-primary"
+                    >
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
-        </div>
-      ))}
+            )}
+          </div>
+        ))
+      }
     </nav>
     <div class="hidden lg:flex items-center gap-4">
-      <a href="tel:01372898732" class="flex items-center gap-2 hover:text-primary transition-colors group">
-        <span class="material-symbols-rounded text-2xl text-primary">phone</span>
+      <a
+        href="tel:01372898732"
+        class="flex items-center gap-2 hover:text-primary transition-colors duration-300 group focus:outline-2 focus:outline-primary rounded-lg p-1"
+      >
+        <span
+          class="material-symbols-rounded text-2xl text-primary group-hover:scale-110 transition-transform duration-300"
+          >phone</span
+        >
         <div class="flex flex-col leading-tight">
-          <span class="font-heading text-xs text-navy/60 font-semibold tracking-wide">Epsom, Surrey</span>
-          <span class="font-heading font-bold text-navy text-sm group-hover:text-primary transition-colors">01372 898732</span>
+          <span
+            class="font-heading text-xs text-navy/60 font-semibold tracking-wide"
+            >Epsom, Surrey</span
+          >
+          <span
+            class="font-heading font-bold text-navy text-sm group-hover:text-primary transition-colors duration-300"
+            >01372 898732</span
+          >
         </div>
       </a>
-      <a href="/quote/" class="inline-block bg-accent hover:bg-accent-dark text-white font-heading font-bold text-sm px-6 py-3 rounded-full transition-colors focus:outline-2 focus:outline-accent focus:outline-offset-2">
+      <a
+        href="/quote/"
+        class="inline-block bg-accent hover:bg-accent-dark text-white font-heading font-bold text-sm px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-md focus:outline-2 focus:outline-accent focus:outline-offset-2"
+      >
         Get Quote
       </a>
     </div>
-    <button id="menu-toggle" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+    <button
+      id="menu-toggle"
+      class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300 focus:outline-2 focus:outline-primary"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-drawer"
+    >
       <span class="material-symbols-rounded text-3xl text-navy">menu</span>
     </button>
   </div>
 </header>
-<div id="mobile-backdrop" class="fixed inset-0 bg-black/50 z-60 hidden lg:hidden" aria-hidden="true"></div>
-<div id="mobile-drawer" class="fixed top-[60px] right-0 w-[300px] h-[calc(100vh-60px)] bg-white z-70 transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto lg:hidden shadow-2xl" role="dialog" aria-label="Mobile menu" aria-modal="true">
+<div
+  id="mobile-backdrop"
+  class="fixed inset-0 bg-black/50 z-60 hidden lg:hidden"
+  aria-hidden="true"
+>
+</div>
+<div
+  id="mobile-drawer"
+  class="fixed top-[60px] right-0 w-[300px] h-[calc(100vh-60px)] bg-white z-70 transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto lg:hidden shadow-2xl"
+  role="dialog"
+  aria-label="Mobile menu"
+  aria-modal="true"
+>
   <div class="p-6 space-y-2">
-    <a href="tel:01372898732" class="flex items-center gap-2 font-heading font-semibold text-navy mb-4">
-      <span class="material-symbols-rounded text-primary">phone</span>01372 898732
+    <a
+      href="tel:01372898732"
+      class="flex items-center gap-2 font-heading font-semibold text-navy mb-4"
+    >
+      <span class="material-symbols-rounded text-primary">phone</span>01372
+      898732
     </a>
-    <a href="/quote/" class="block w-full text-center bg-accent hover:bg-accent-dark text-white font-heading font-bold px-6 py-3 rounded-full transition-colors mb-4">Get Quote</a>
-    {navLinks.map((link) => (
-      <div>
-        <a href={link.href}
-           class={`block py-3 px-2 font-heading font-semibold text-sm border-b border-gray-100 transition-colors hover:text-primary ${currentPath === link.href ? 'text-primary' : 'text-navy'}`}>
-          {link.label}
-        </a>
-        {link.children && (
-          <div class="mobile-submenu hidden pl-4">
-            {link.children.map((child) => (
-              <a href={child.href} class="block py-2 px-2 text-sm text-navy/80 hover:text-primary transition-colors">{child.label}</a>
-            ))}
-          </div>
-        )}
-      </div>
-    ))}
+    <a
+      href="/quote/"
+      class="block w-full text-center bg-accent hover:bg-accent-dark text-white font-heading font-bold px-6 py-3 rounded-full transition-colors mb-4"
+      >Get Quote</a
+    >
+    {
+      navLinks.map((link) => (
+        <div>
+          <a
+            href={link.href}
+            class={`block py-3 px-2 font-heading font-semibold text-sm border-b border-gray-100 transition-colors duration-300 hover:text-primary focus:outline-2 focus:outline-primary ${currentPath === link.href ? "text-primary" : "text-navy"}`}
+          >
+            {link.label}
+          </a>
+          {link.children && (
+            <div class="mobile-submenu hidden pl-4">
+              {link.children.map((child) => (
+                <a
+                  href={child.href}
+                  class="block py-2 px-2 text-sm text-navy/80 hover:text-primary transition-colors duration-300 focus:outline-2 focus:outline-primary"
+                >
+                  {child.label}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
+      ))
+    }
   </div>
 </div>
 <script>
-  const toggle = document.getElementById('menu-toggle');
-  const drawer = document.getElementById('mobile-drawer');
-  const backdrop = document.getElementById('mobile-backdrop');
+  const toggle = document.getElementById("menu-toggle");
+  const drawer = document.getElementById("mobile-drawer");
+  const backdrop = document.getElementById("mobile-backdrop");
   function openMenu() {
-    drawer?.classList.remove('translate-x-full');
-    backdrop?.classList.remove('hidden');
-    toggle?.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
+    drawer?.classList.remove("translate-x-full");
+    backdrop?.classList.remove("hidden");
+    toggle?.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
   }
   function closeMenu() {
-    drawer?.classList.add('translate-x-full');
-    backdrop?.classList.add('hidden');
-    toggle?.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
+    drawer?.classList.add("translate-x-full");
+    backdrop?.classList.add("hidden");
+    toggle?.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
     toggle?.focus();
   }
-  toggle?.addEventListener('click', () => {
-    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+  toggle?.addEventListener("click", () => {
+    const expanded = toggle.getAttribute("aria-expanded") === "true";
     expanded ? closeMenu() : openMenu();
   });
-  backdrop?.addEventListener('click', closeMenu);
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
-  document.querySelectorAll('.mobile-submenu')?.forEach((sub) => {
+  backdrop?.addEventListener("click", closeMenu);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+  document.querySelectorAll(".mobile-submenu")?.forEach((sub) => {
     const parent = sub.previousElementSibling;
-    parent?.addEventListener('click', (e) => {
+    parent?.addEventListener("click", (e) => {
       if (window.innerWidth < 1024 && sub) {
         e.preventDefault();
-        sub.classList.toggle('hidden');
+        sub.classList.toggle("hidden");
       }
     });
   });
 </script>
-

@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #00A99D;
-  --color-primary-dark: #008F85;
-  --color-secondary: #006B79;
-  --color-accent: #8BCB00;
-  --color-accent-dark: #79B300;
-  --color-navy: #1E2A32;
-  --color-off-white: #F7FAF9;
-  --color-card-bg: #EDF6F5;
-  --color-aqua-light: #E0F7F5;
-  --font-heading: 'Montserrat', Arial, sans-serif;
-  --font-body: 'Source Sans 3', Arial, sans-serif;
+  --color-primary: #00a99d;
+  --color-primary-dark: #008f85;
+  --color-secondary: #006b79;
+  --color-accent: #8bcb00;
+  --color-accent-dark: #79b300;
+  --color-navy: #1e2a32;
+  --color-off-white: #f7faf9;
+  --color-card-bg: #edf6f5;
+  --color-aqua-light: #e0f7f5;
+  --font-heading: "Montserrat", Arial, sans-serif;
+  --font-body: "Source Sans 3", Arial, sans-serif;
 }
 
 body {
@@ -40,4 +40,10 @@ body {
 
 .border-y {
   border-block-width: 0px;
+}
+
+/* Global focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }

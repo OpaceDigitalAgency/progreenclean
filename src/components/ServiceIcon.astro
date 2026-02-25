@@ -3,26 +3,33 @@ interface Props {
   slug: string;
   size?: string;
 }
-const { slug, size = 'w-16 h-16' } = Astro.props;
+const { slug, size = "w-16 h-16" } = Astro.props;
 
 const imageMap: Record<string, string> = {
-  'window-cleaning': '/window-cleaning.png',
-  'gutter-cleaning': '/skyvac-gutter-cleaning.png',
-  'carpet-cleaning': '/carpet-cleaning.png',
-  'oven-cleaning': '/oven-cleaning.png',
-  'domestic-cleaning': '/window-cleaning.png',
-  'pressure-washing': '/pressure-jet-cleaning.png',
-  'end-of-tenancy-cleaning': '/window-cleaning.png',
-  'commercial-cleaning': '/window-cleaning.png',
-  'solar-panel-cleaning': '/solar-panel-cleaning.png',
-  'skyvac-gutter-cleaning': '/skyvac-gutter-cleaning.png',
-  'conservatory-cleaning': '/conservatory-cleaning.png',
-  'graffiti-removal': '/window-cleaning.png',
+  "window-cleaning": "/window-cleaning.png",
+  "gutter-cleaning": "/skyvac-gutter-cleaning.png",
+  "carpet-cleaning": "/carpet-cleaning.png",
+  "oven-cleaning": "/oven-cleaning.png",
+  "domestic-cleaning": "/window-cleaning.png",
+  "pressure-washing": "/pressure-jet-cleaning.png",
+  "end-of-tenancy-cleaning": "/window-cleaning.png",
+  "commercial-cleaning": "/window-cleaning.png",
+  "solar-panel-cleaning": "/solar-panel-cleaning.png",
+  "skyvac-gutter-cleaning": "/skyvac-gutter-cleaning.png",
+  "conservatory-cleaning": "/conservatory-cleaning.png",
+  "graffiti-removal": "/window-cleaning.png",
 };
 
-const imageSrc = imageMap[slug] || '/window-cleaning.png';
+const imageSrc = imageMap[slug] || "/window-cleaning.png";
 ---
-<div class={`${size} shrink-0`}>
-  <img src={imageSrc} alt={slug} class="w-full h-full object-contain" />
-</div>
 
+<div class={`${size} shrink-0`}>
+  <img
+    src={imageSrc}
+    alt={`${slug} service icon`}
+    width="64"
+    height="64"
+    loading="lazy"
+    class="w-full h-full object-contain"
+  />
+</div>
