@@ -19,13 +19,23 @@ const {
   compact = false,
 } = Astro.props;
 ---
-<section class={`relative overflow-hidden ${compact ? 'py-16 lg:py-20' : 'pt-20 pb-32 lg:pt-28 lg:pb-44 min-h-[600px]'}`}>
+<section class={`relative overflow-hidden ${compact ? 'py-16 lg:py-20' : 'pt-40 pb-32 lg:pt-48 lg:pb-44 min-h-[600px]'}`}>
   {!compact ? (
     <div class="absolute inset-0 -z-10">
       <img src="/hero-bg.jpg" alt="" class="w-full h-full object-cover object-center" aria-hidden="true" />
     </div>
   ) : (
     <div class="absolute inset-0 bg-gradient-to-br from-aqua-light via-card-bg to-white -z-10"></div>
+  )}
+  {!compact && (
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/30 via-aqua-light/50 to-transparent pointer-events-none" aria-hidden="true"></div>
+  )}
+  {!compact && (
+    <div class="absolute top-0 left-0 right-0 pointer-events-none" aria-hidden="true">
+      <svg viewBox="0 0 1440 140" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full block" preserveAspectRatio="none" style="height: 140px;">
+        <path d="M0,0 L1440,0 L1440,55 C1200,95 900,25 620,55 C400,78 180,90 0,82 L0,0 Z" fill="white"/>
+      </svg>
+    </div>
   )}
 
   <div class="max-w-7xl mx-auto px-4 lg:px-8 w-full relative z-10">
