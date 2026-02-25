@@ -5,6 +5,7 @@ import WaveDivider from "../components/WaveDivider.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import CtaBanner from "../components/CtaBanner.astro";
 import reviews from "../data/reviews.json";
+import { generateLocalBusinessSchema } from "../utils/seo.js";
 
 const sourceIcons: Record<string, string> = {
   Yell: "🟡",
@@ -34,11 +35,17 @@ const platformCounts = ["Yell", "Checkatrade", "Facebook"].map((src) => ({
   src,
   count: reviews.filter((r) => r.source === src).length,
 }));
+
+const localBusinessSchema = generateLocalBusinessSchema({
+  ratingValue: avgRating,
+  reviewCount: reviews.length,
+});
 ---
 
 <SiteLayout
   title="Customer Reviews"
   description="Read genuine 5-star reviews from ProGreen Clean customers across Epsom and Surrey. Verified reviews from Yell, Checkatrade and Facebook."
+  schemas={[localBusinessSchema]}
 >
   <PageHero
     headline="What Our <span class='text-primary'>Customers</span> Say"

@@ -2,12 +2,20 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import netlify from '@astrojs/netlify';
+import compress from '@playform/compress';
 
 export default defineConfig({
   site: 'https://progreenclean.co.uk',
   output: 'static',
   integrations: [
     sitemap(),
+    compress({
+      CSS: true,
+      HTML: true,
+      Image: false,
+      JavaScript: true,
+      SVG: true,
+    }),
   ],
   vite: {
     plugins: [tailwindcss()],

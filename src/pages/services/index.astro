@@ -8,11 +8,15 @@ import TestimonialStrip from "../../components/TestimonialStrip.astro";
 import CtaBanner from "../../components/CtaBanner.astro";
 import services from "../../data/services.json";
 import reviews from "../../data/reviews.json";
+import { generateLocalBusinessSchema } from "../../utils/seo.js";
+
+const localBusinessSchema = generateLocalBusinessSchema();
 ---
 
 <SiteLayout
   title="Our Cleaning Services"
   description="Browse our full range of domestic and commercial cleaning services in Epsom and Surrey. Windows, gutters, carpets, ovens and more."
+  schemas={[localBusinessSchema]}
 >
   <PageHero
     headline="Every Clean You Could <span class='text-primary'>Possibly Need</span>"

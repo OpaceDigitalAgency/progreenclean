@@ -6,11 +6,15 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
 import TestimonialStrip from "../components/TestimonialStrip.astro";
 import CtaBanner from "../components/CtaBanner.astro";
 import reviews from "../data/reviews.json";
+import { generateLocalBusinessSchema } from "../utils/seo.js";
+
+const localBusinessSchema = generateLocalBusinessSchema();
 ---
 
 <SiteLayout
   title="About Us"
   description="Meet the team behind ProGreen Clean. Family-run, fully insured cleaning specialists serving Epsom and Surrey for over 10 years."
+  schemas={[localBusinessSchema]}
 >
   <PageHero
     headline="A Family Business Built on <span class='text-primary'>Hard Work and Trust</span>"

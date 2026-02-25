@@ -7,9 +7,19 @@ import CtaBanner from "../components/CtaBanner.astro";
 import ServiceAreaMap from "../components/ServiceAreaMap.astro";
 import WaveDivider from "../components/WaveDivider.astro";
 import services from "../data/services.json";
+import reviews from "../data/reviews.json";
+import { generateLocalBusinessSchema } from "../utils/seo.js";
+
+const totalRating = reviews.reduce((sum, r) => sum + r.rating, 0);
+const avgRating = (totalRating / reviews.length).toFixed(1);
+
+const localBusinessSchema = generateLocalBusinessSchema({
+  ratingValue: avgRating,
+  reviewCount: reviews.length,
+});
 ---
 
-<SiteLayout>
+<SiteLayout schemas={[localBusinessSchema]}>
   <HeroSection
     headline="Professional Window & Gutter<br />Cleaning in <span class='text-navy'>Epsom</span>"
     subheadline="Fresh, reliable cleaning for homes and businesses across Epsom and Surrey. Fully insured, family-run, and trusted locally."
