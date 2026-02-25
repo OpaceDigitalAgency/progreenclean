@@ -1,70 +1,103 @@
 ---
-import SiteLayout from '../layouts/SiteLayout.astro';
-import HeroSection from '../components/HeroSection.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
-import CtaBanner from '../components/CtaBanner.astro';
+import SiteLayout from "../layouts/SiteLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import WaveDivider from "../components/WaveDivider.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import CtaBanner from "../components/CtaBanner.astro";
 
 const guides = [
   {
-    title: 'Seasonal Cleaning Calendar for Homeowners',
-    icon: 'calendar_month',
-    description: 'A month-by-month breakdown of the outdoor and indoor cleaning tasks that keep your home in top shape all year round.',
+    title: "Seasonal Cleaning Calendar for Homeowners",
+    icon: "calendar_month",
+    description:
+      "A month-by-month breakdown of the outdoor and indoor cleaning tasks that keep your home in top shape all year round.",
   },
   {
-    title: 'How to Prepare Your Property for a Professional Clean',
-    icon: 'checklist',
-    description: 'Quick steps you can take before we arrive to help us work faster and get the best possible results.',
+    title: "How to Prepare Your Property for a Professional Clean",
+    icon: "checklist",
+    description:
+      "Quick steps you can take before we arrive to help us work faster and get the best possible results.",
   },
   {
-    title: 'Understanding Water-Fed Pole Cleaning',
-    icon: 'water_drop',
-    description: 'What purified water systems are, how they work, and why they leave a better finish than traditional methods.',
+    title: "Understanding Water-Fed Pole Cleaning",
+    icon: "water_drop",
+    description:
+      "What purified water systems are, how they work, and why they leave a better finish than traditional methods.",
   },
   {
-    title: 'Gutter Maintenance: A Landlord\'s Guide',
-    icon: 'roofing',
-    description: 'Why regular gutter cleaning protects your investment — and what can happen if you leave it too long.',
+    title: "Gutter Maintenance: A Landlord's Guide",
+    icon: "roofing",
+    description:
+      "Why regular gutter cleaning protects your investment — and what can happen if you leave it too long.",
   },
   {
-    title: 'Choosing the Right Cleaning Service',
-    icon: 'fact_check',
-    description: 'What to look for when hiring a cleaning company: insurance, accreditation, pricing transparency and red flags.',
+    title: "Choosing the Right Cleaning Service",
+    icon: "fact_check",
+    description:
+      "What to look for when hiring a cleaning company: insurance, accreditation, pricing transparency and red flags.",
   },
   {
-    title: 'Eco-Friendly Cleaning: What Actually Works',
-    icon: 'eco',
-    description: 'A no-nonsense look at green cleaning products and techniques — what delivers real results and what is just marketing.',
+    title: "Eco-Friendly Cleaning: What Actually Works",
+    icon: "eco",
+    description:
+      "A no-nonsense look at green cleaning products and techniques — what delivers real results and what is just marketing.",
   },
 ];
 ---
-<SiteLayout title="Resources & Guides" description="Free cleaning guides, tips and downloadable resources from ProGreen Clean. Practical advice for homeowners and landlords in Surrey.">
-  <HeroSection
-    headline="Free Guides &<br /><span class='text-primary'>Useful Resources</span>"
+
+<SiteLayout
+  title="Resources & Guides"
+  description="Free cleaning guides, tips and downloadable resources from ProGreen Clean. Practical advice for homeowners and landlords in Surrey."
+>
+  <PageHero
+    headline="Free Guides & <span class='text-primary'>Useful Resources</span>"
     subheadline="Practical cleaning advice you can actually use. Written by our team, based on real experience — not recycled from the internet."
-    compact={true}
   />
-  <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Resources' }]} />
+  <WaveDivider variant="teal-to-white" />
+  <Breadcrumbs items={[{ name: "Home", url: "/" }, { name: "Resources" }]} />
   <section class="py-16 lg:py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-4 lg:px-8">
-      <div class="bg-aqua-light rounded-2xl p-8 lg:p-12 text-center mb-12">
-        <span class="material-symbols-rounded text-5xl text-primary mb-4 block">auto_stories</span>
-        <h2 class="font-heading font-bold text-2xl text-navy mb-3">Guides Coming Soon</h2>
-        <p class="text-navy/70 leading-relaxed max-w-xl mx-auto">We are putting together a set of downloadable guides covering the topics below. Check back soon, or get in touch if you have a specific question — we are always happy to help.</p>
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+      <div
+        class="bg-[#dfedea] rounded-2xl p-8 lg:p-10 text-center mb-12 max-w-3xl mx-auto"
+      >
+        <span class="material-symbols-rounded text-5xl text-primary mb-4 block"
+          >auto_stories</span
+        >
+        <h2 class="font-heading font-bold text-2xl text-navy mb-3">
+          Guides Coming Soon
+        </h2>
+        <p class="text-navy/70 leading-relaxed max-w-xl mx-auto">
+          We are putting together a set of downloadable guides covering the
+          topics below. Check back soon, or get in touch if you have a specific
+          question — we are always happy to help.
+        </p>
       </div>
-      <h2 class="font-heading font-bold text-2xl text-navy mb-8 text-center">What We Are Working On</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {guides.map((guide) => (
-          <div class="bg-off-white rounded-2xl p-6 border border-gray-100">
-            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-              <span class="material-symbols-rounded text-2xl text-primary">{guide.icon}</span>
+      <h2 class="font-heading font-bold text-2xl text-navy mb-8 text-center">
+        What We Are Working On
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          guides.map((guide) => (
+            <div class="bg-off-white rounded-2xl p-6 border border-gray-100">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <span class="material-symbols-rounded text-2xl text-primary">
+                  {guide.icon}
+                </span>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-navy mb-2">
+                {guide.title}
+              </h3>
+              <p class="text-navy/60 text-sm leading-relaxed">
+                {guide.description}
+              </p>
             </div>
-            <h3 class="font-heading font-bold text-lg text-navy mb-2">{guide.title}</h3>
-            <p class="text-navy/60 text-sm leading-relaxed">{guide.description}</p>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
-  <CtaBanner headline="Got a Question We Can Help With?" text="Drop us a line and we will do our best to point you in the right direction — no charge, no obligation." />
+  <CtaBanner
+    headline="Got a Question We Can Help With?"
+    text="Drop us a line and we will do our best to point you in the right direction — no charge, no obligation."
+  />
 </SiteLayout>
-

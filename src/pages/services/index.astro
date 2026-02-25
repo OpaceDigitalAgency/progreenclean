@@ -1,36 +1,75 @@
 ---
-import SiteLayout from '../../layouts/SiteLayout.astro';
-import HeroSection from '../../components/HeroSection.astro';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import ServiceCard from '../../components/ServiceCard.astro';
-import CtaBanner from '../../components/CtaBanner.astro';
-import services from '../../data/services.json';
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import WaveDivider from "../../components/WaveDivider.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import ServiceCard from "../../components/ServiceCard.astro";
+import CtaBanner from "../../components/CtaBanner.astro";
+import services from "../../data/services.json";
 ---
-<SiteLayout title="Our Cleaning Services" description="Browse our full range of domestic and commercial cleaning services in Epsom and Surrey. Windows, gutters, carpets, ovens and more.">
-  <HeroSection
-    headline="Every Clean You Could<br /><span class='text-primary'>Possibly Need</span>"
+
+<SiteLayout
+  title="Our Cleaning Services"
+  description="Browse our full range of domestic and commercial cleaning services in Epsom and Surrey. Windows, gutters, carpets, ovens and more."
+>
+  <PageHero
+    headline="Every Clean You Could <span class='text-primary'>Possibly Need</span>"
     subheadline="Domestic or commercial, inside or out — we have got the equipment, the training and the experience to handle it all."
-    compact={true}
+    ctaText="Get a Free Quote"
+    ctaHref="/quote/"
   />
-  <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Services' }]} />
-  <section class="bg-[#dfedea] relative overflow-hidden" style="padding-block: 0px;">
-    <div class="max-w-7xl mx-auto px-4 lg:px-8 py-20 lg:py-28">
-      <h2 class="font-heading font-bold text-4xl text-navy text-center mb-6">Our Professional Services</h2>
-      <p class="text-navy/60 text-center mb-16 max-w-3xl mx-auto text-lg">From gleaming windows to spotless ovens, we handle every type of clean — domestic and commercial — across Epsom and the surrounding Surrey towns.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-        {services.map((s) => (
-          <ServiceCard title={s.title} slug={s.slug} icon={s.icon} description={s.description} />
-        ))}
+  <WaveDivider variant="teal-to-white" />
+  <Breadcrumbs items={[{ name: "Home", url: "/" }, { name: "Services" }]} />
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+      <h2 class="font-heading font-bold text-4xl text-navy text-center mb-4">
+        Our Professional Services
+      </h2>
+      <p class="text-navy/60 text-center mb-12 max-w-3xl mx-auto text-lg">
+        From gleaming windows to spotless ovens, we handle every type of clean —
+        domestic and commercial — across Epsom and the surrounding Surrey towns.
+      </p>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+      >
+        {
+          services.map((s) => (
+            <ServiceCard
+              title={s.title}
+              slug={s.slug}
+              icon={s.icon}
+              description={s.description}
+            />
+          ))
+        }
       </div>
     </div>
   </section>
-  <section class="py-16 lg:py-20 bg-white">
+  <WaveDivider variant="white-to-teal" />
+  <section class="py-16 lg:py-20 bg-[#dfedea]">
     <div class="max-w-7xl mx-auto px-4 lg:px-8 text-center">
-      <h2 class="font-heading font-bold text-3xl text-navy mb-4">Not Sure Which Service You Need?</h2>
-      <p class="text-navy/60 mb-8 max-w-2xl mx-auto">No problem. Give us a ring on <a href="tel:01372898732" class="text-primary font-semibold hover:underline">01372 898732</a> or fill in our quick quote form. We will point you in the right direction.</p>
-      <a href="/quote/" class="inline-block bg-primary hover:bg-primary-dark text-white font-heading font-bold px-8 py-4 rounded-full text-lg transition-colors shadow-lg shadow-primary/25">Get a Free Quote</a>
+      <h2 class="font-heading font-bold text-3xl text-navy mb-4">
+        Not Sure Which Service You Need?
+      </h2>
+      <p class="text-navy/60 mb-8 max-w-2xl mx-auto">
+        No problem. Give us a ring on <a
+          href="tel:01372898732"
+          class="text-primary font-semibold hover:underline">01372 898732</a
+        > or fill in our quick quote form. We will point you in the right direction.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href="/quote/"
+          class="inline-block bg-accent hover:bg-accent-dark text-white font-heading font-bold px-8 py-4 rounded-full text-lg transition-all shadow-lg shadow-accent/30 hover:shadow-xl hover:scale-105"
+          >Get a Free Quote</a
+        >
+        <a
+          href="tel:01372898732"
+          class="inline-block bg-white hover:bg-white/90 text-navy font-heading font-bold px-8 py-4 rounded-full text-lg transition-all shadow-md border border-navy/10"
+          >Call 01372 898732</a
+        >
+      </div>
     </div>
   </section>
   <CtaBanner />
 </SiteLayout>
-
