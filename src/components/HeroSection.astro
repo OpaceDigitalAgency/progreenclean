@@ -30,8 +30,8 @@ const {
 
   <div class="max-w-7xl mx-auto px-4 lg:px-8 w-full relative z-10">
     <div class={compact ? 'max-w-3xl' : 'max-w-2xl'}>
-      <h1 class={`font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 ${compact ? 'text-secondary' : 'text-secondary drop-shadow-lg'}`} set:html={headline} />
-      {subheadline && <p class={`text-lg md:text-xl mb-8 leading-relaxed max-w-xl ${compact ? 'text-secondary/70' : 'text-secondary/80 drop-shadow'}`}>{subheadline}</p>}
+      <h1 class={`font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 ${compact ? 'text-navy' : 'text-navy drop-shadow-lg'}`} set:html={headline} />
+      {subheadline && <p class={`text-lg md:text-xl mb-8 leading-relaxed max-w-xl ${compact ? 'text-navy/70' : 'text-navy/80 drop-shadow'}`}>{subheadline}</p>}
       <div class="flex flex-wrap gap-4">
         <a href={ctaHref} class="inline-block bg-accent hover:bg-accent-dark text-white font-heading font-bold px-8 py-4 rounded-full text-lg transition-all shadow-lg shadow-accent/30 hover:shadow-xl hover:scale-105 focus:outline-2 focus:outline-accent focus:outline-offset-2">
           {ctaText}
