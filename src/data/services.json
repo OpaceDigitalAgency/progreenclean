@@ -4,6 +4,7 @@
     "slug": "window-cleaning",
     "icon": "window",
     "description": "Streak-free windows, interior and exterior, for brilliant clarity.",
+    "metaDescription": "Professional window cleaning in Epsom & Surrey. Streak-free results using a water-fed pole system — no ladders, no chemicals. From £25. Fully insured.",
     "longDescription": "Our pure water-fed pole system reaches up to 60 feet, delivering streak-free results without ladders or chemicals. We clean both interior and exterior windows for homes and businesses across Epsom and Surrey.",
     "price": "From £25",
     "faqs": [
@@ -19,6 +20,7 @@
     "slug": "gutter-cleaning",
     "icon": "cleaning_services",
     "description": "Clear gutters for proper water flow and property protection.",
+    "metaDescription": "Gutter cleaning in Epsom & Surrey using the SkyVac system. We clear blocked gutters safely from the ground — no ladders. From £45. Fully insured.",
     "longDescription": "Blocked gutters cause damp, mould and structural damage. Our SkyVac system clears debris safely from the ground, followed by a full inspection of joints and downpipes.",
     "price": "From £45",
     "faqs": [
@@ -33,6 +35,7 @@
     "slug": "carpet-cleaning",
     "icon": "format_color_fill",
     "description": "Deep cleaning to refresh and revitalise your carpets.",
+    "metaDescription": "Professional carpet cleaning in Epsom & Surrey. Hot water extraction removes deep-set dirt, stains and allergens. Pet-friendly, child-safe. From £35.",
     "longDescription": "Our industrial hot-water extraction machines lift deep-set dirt, allergens and stains from carpets, rugs and upholstery. Safe for all fibre types and pet-friendly households.",
     "price": "From £35",
     "faqs": [
@@ -47,6 +50,7 @@
     "slug": "oven-cleaning",
     "icon": "soup_kitchen",
     "description": "Thorough cleaning of ovens, hobs, and extractor fans.",
+    "metaDescription": "Professional oven cleaning in Epsom & Surrey. Non-caustic, food-safe products for single, double, range and AGA ovens. Oven ready to use immediately. From £55.",
     "longDescription": "We deep-clean single, double, range and AGA ovens using non-caustic, eco-friendly products. Racks, trays, doors, seals and extractor fans are all included.",
     "price": "From £55",
     "faqs": [
@@ -61,6 +65,7 @@
     "slug": "domestic-cleaning",
     "icon": "home",
     "description": "Comprehensive indoor cleaning for a spotless home.",
+    "metaDescription": "Domestic cleaning services in Epsom & Surrey. Regular weekly cleans, one-off deep cleans and key holding. Fully insured, eco-friendly. From £20/hr.",
     "longDescription": "Tailored home cleaning plans for busy households. Whether you need a regular weekly visit or a thorough one-off deep clean, our trained team covers kitchens, bathrooms, bedrooms and living areas.",
     "price": "From £20/hr",
     "faqs": [
@@ -75,6 +80,7 @@
     "slug": "pressure-washing",
     "icon": "water_drop",
     "description": "Effective cleaning for driveways, patios, and exterior walls.",
+    "metaDescription": "Pressure washing and soft washing in Epsom & Surrey. Driveways, patios, decking, render and cladding restored to pristine condition. From £80.",
     "longDescription": "We restore driveways, patios, decking and exterior walls to their original condition using commercial-grade pressure washers and gentle soft-wash techniques for delicate surfaces.",
     "price": "From £80",
     "faqs": [
@@ -89,6 +95,7 @@
     "slug": "end-of-tenancy-cleaning",
     "icon": "key",
     "description": "Deep clean guaranteed to help secure your full deposit back.",
+    "metaDescription": "End of tenancy cleaning in Epsom & Surrey. Full deep clean with satisfaction guarantee — helping tenants, landlords and letting agents pass inventory checks. From £120.",
     "longDescription": "Our end-of-tenancy clean covers every room from top to bottom — kitchen appliances, bathrooms, carpets, windows and all fixtures. Ideal for landlords, tenants and letting agents.",
     "price": "From £120",
     "faqs": [
@@ -103,6 +110,7 @@
     "slug": "commercial-cleaning",
     "icon": "business",
     "description": "Reliable contract cleaning for offices, shops, and warehouses.",
+    "metaDescription": "Commercial cleaning contracts in Epsom & Surrey. Offices, retail, warehouses and restaurants cleaned outside business hours. DBS checked staff. Custom quotes.",
     "longDescription": "Flexible cleaning contracts tailored to your business. We clean offices, retail units, warehouses, restaurants and communal areas outside normal working hours to minimise disruption.",
     "price": "Custom Quote",
     "faqs": [
@@ -117,6 +125,7 @@
     "slug": "solar-panel-cleaning",
     "icon": "wb_sunny",
     "description": "Maximise efficiency with clean solar panels.",
+    "metaDescription": "Solar panel cleaning in Epsom & Surrey using pure water — no chemicals, no scratching. Restore up to 25% lost energy output. From £40. Fully insured.",
     "longDescription": "Dirty solar panels lose up to 25% of their energy output. Our pure-water cleaning system safely removes bird droppings, algae and grime without scratching the glass.",
     "price": "From £40",
     "faqs": [
@@ -131,6 +140,7 @@
     "slug": "skyvac-gutter-cleaning",
     "icon": "air",
     "description": "Safe, high-reach gutter cleaning from the ground.",
+    "metaDescription": "SkyVac gutter cleaning in Epsom & Surrey. Safe, no-ladder cleaning up to 12 metres with a built-in camera to show you the results. From £65. Fully insured.",
     "longDescription": "Our SkyVac industrial vacuum system clears gutters, fascias and soffits from ground level — no ladders, no scaffolding, no risk. A built-in camera lets us show you the results in real time.",
     "price": "From £65",
     "faqs": [
@@ -145,6 +155,7 @@
     "slug": "conservatory-cleaning",
     "icon": "deck",
     "description": "Revive your conservatory with roof, frame, and window cleaning.",
+    "metaDescription": "Conservatory cleaning in Epsom & Surrey. Roof, frames, windows and gutters cleaned with pure water — removing algae, moss and grime. From £95. Fully insured.",
     "longDescription": "We clean conservatory roofs, frames, windows and gutters using pure water and specialist tools. The result is a brighter, fresher conservatory free of algae, moss and grime.",
     "price": "From £95",
     "faqs": [
@@ -159,6 +170,7 @@
     "slug": "graffiti-removal",
     "icon": "format_paint",
     "description": "Fast, effective graffiti removal using safe methods.",
+    "metaDescription": "Graffiti removal in Epsom & Surrey from brick, stone, metal and glass. Fast response within 24–48 hours using non-abrasive solutions. Anti-graffiti coatings available.",
     "longDescription": "We remove graffiti from brick, stone, metal, glass and painted surfaces using specialist non-abrasive solutions. Anti-graffiti coatings can be applied afterwards for long-term protection.",
     "price": "Custom Quote",
     "faqs": [
@@ -169,4 +181,3 @@
     ]
   }
 ]
-

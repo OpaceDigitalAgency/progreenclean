@@ -20,13 +20,43 @@ const imageMap: Record<string, string> = {
   "graffiti-removal": "/window-cleaning.png",
 };
 
+const altMap: Record<string, string> = {
+  "window-cleaning":
+    "Professional window cleaning using a water-fed pole system in Epsom and Surrey",
+  "gutter-cleaning":
+    "Gutter cleaning service using the SkyVac system in Epsom and Surrey",
+  "carpet-cleaning":
+    "Deep carpet cleaning using hot water extraction in Epsom and Surrey",
+  "oven-cleaning":
+    "Professional oven cleaning service using non-caustic eco-friendly products",
+  "domestic-cleaning":
+    "Domestic home cleaning service for houses and flats in Epsom and Surrey",
+  "pressure-washing":
+    "Pressure washing and soft washing for driveways, patios and exterior walls",
+  "end-of-tenancy-cleaning":
+    "End of tenancy deep clean service to help secure your full deposit back",
+  "commercial-cleaning":
+    "Commercial cleaning contracts for offices, shops and warehouses in Surrey",
+  "solar-panel-cleaning":
+    "Solar panel cleaning using pure water to maximise energy output",
+  "skyvac-gutter-cleaning":
+    "SkyVac gutter cleaning — safe high-reach cleaning from the ground",
+  "conservatory-cleaning":
+    "Conservatory cleaning including roof, frames and windows in Epsom",
+  "graffiti-removal":
+    "Graffiti removal from brick, stone, metal and glass surfaces in Surrey",
+};
+
 const imageSrc = imageMap[slug] || "/window-cleaning.png";
+const imageAlt =
+  altMap[slug] ||
+  `Professional ${slug.replace(/-/g, " ")} service in Epsom and Surrey`;
 ---
 
 <div class={`${size} shrink-0`}>
   <img
     src={imageSrc}
-    alt={`${slug} service icon`}
+    alt={imageAlt}
     width="64"
     height="64"
     loading="lazy"

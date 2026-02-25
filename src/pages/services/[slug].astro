@@ -24,8 +24,8 @@ const faqSchema = generateFaqSchema(service.faqs);
 ---
 
 <SiteLayout
-  title={`${service.title} in Epsom, Surrey`}
-  description={service.longDescription}
+  title={`${service.title} in Epsom & Surrey`}
+  description={service.metaDescription || service.longDescription}
   schemas={[serviceSchema, faqSchema]}
 >
   <PageHero
