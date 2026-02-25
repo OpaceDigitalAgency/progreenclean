@@ -19,15 +19,14 @@ const {
   compact = false,
 } = Astro.props;
 ---
-<section class={`relative isolate ${compact ? 'py-16 lg:py-20 overflow-hidden' : 'pt-24 pb-48 lg:pt-32 lg:pb-60 min-h-[600px]'}`}>
+<section class={`relative isolate ${compact ? 'py-16 lg:py-20 overflow-hidden' : 'pt-24 pb-40 lg:pt-32 lg:pb-52 min-h-[600px]'}`}>
   {!compact ? (
-    <div class="absolute inset-0 -z-20">
+    <div class="absolute inset-0 -z-10">
       <div class="absolute inset-0 bg-gradient-to-br from-aqua-light via-card-bg to-white"></div>
       <img src="/hero-bg.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-90" aria-hidden="true" />
-      <div class="absolute bottom-0 left-0 right-0 h-48 lg:h-60 bg-gradient-to-t from-white/80 to-transparent"></div>
     </div>
   ) : (
-    <div class="absolute inset-0 bg-gradient-to-br from-aqua-light via-card-bg to-white -z-20"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-aqua-light via-card-bg to-white -z-10"></div>
   )}
 
   <div class="max-w-7xl mx-auto px-4 lg:px-8 w-full relative z-10">
@@ -48,12 +47,12 @@ const {
     </div>
   </div>
   {!compact && (
-    <div class="absolute bottom-0 left-0 right-0 z-10">
-      <svg viewBox="0 0 1440 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full block" preserveAspectRatio="none" style="height: 140px; min-height: 100px;">
-        <path d="M0,80 C180,130 360,40 540,70 C720,100 900,140 1080,90 C1200,60 1350,80 1440,65 L1440,200 L0,200 Z" fill="white" fill-opacity="0.5"/>
-        <path d="M0,100 C200,145 400,60 600,90 C800,120 1000,150 1200,100 C1320,75 1400,95 1440,85 L1440,200 L0,200 Z" fill="white" fill-opacity="0.7"/>
-        <path d="M0,125 C240,155 480,100 720,120 C960,140 1100,155 1260,130 C1360,115 1420,128 1440,120 L1440,200 L0,200 Z" fill="white" fill-opacity="0.9"/>
-        <path d="M0,150 C300,170 600,130 900,155 C1100,165 1300,175 1440,160 L1440,200 L0,200 Z" fill="white"/>
+    <div class="absolute bottom-0 left-0 right-0 z-20 pointer-events-none">
+      <svg viewBox="0 0 1440 160" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full block" preserveAspectRatio="none" style="height: 120px;">
+        <path d="M0,100 C180,140 360,60 540,80 C720,100 900,140 1080,100 C1200,75 1350,90 1440,80 L1440,160 L0,160 Z" fill="white" fill-opacity="0.6"/>
+        <path d="M0,115 C200,150 400,80 600,100 C800,120 1000,150 1200,110 C1320,90 1400,105 1440,100 L1440,160 L0,160 Z" fill="white" fill-opacity="0.8"/>
+        <path d="M0,130 C240,155 480,110 720,125 C960,140 1100,155 1260,135 C1360,120 1420,130 1440,125 L1440,160 L0,160 Z" fill="white"/>
+        <path d="M0,145 C300,160 600,135 900,148 C1100,155 1300,160 1440,150 L1440,160 L0,160 Z" fill="white"/>
       </svg>
     </div>
   )}
