@@ -1,36 +1,110 @@
 ---
-import SiteLayout from '../layouts/SiteLayout.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
+import SiteLayout from "../layouts/SiteLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 ---
-<SiteLayout title="Privacy Policy" description="How ProGreen Clean Ltd collects, uses and protects your personal data. Read our full privacy policy." noindex={true}>
-  <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Privacy Policy' }]} />
+
+<SiteLayout
+  title="Privacy Policy"
+  description="How ProGreen Clean Ltd collects, uses and protects your personal data. Read our full privacy policy."
+  noindex={true}
+>
+  <Breadcrumbs
+    items={[{ name: "Home", url: "/" }, { name: "Privacy Policy" }]}
+  />
   <section class="py-12 lg:py-16 bg-white">
     <div class="max-w-3xl mx-auto px-4 lg:px-8">
-      <h1 class="font-heading font-extrabold text-3xl md:text-4xl text-navy mb-6">Privacy Policy</h1>
+      <h1
+        class="font-heading font-extrabold text-3xl md:text-4xl text-navy mb-6"
+      >
+        Privacy Policy
+      </h1>
       <p class="text-navy/40 text-sm mb-8">Last updated: 25 February 2026</p>
       <div class="prose max-w-none text-navy/70 leading-relaxed space-y-6">
         <h2 class="font-heading font-bold text-xl text-navy">1. Who We Are</h2>
-        <p>ProGreen Clean Ltd (Company No. 16783547) is the data controller for personal information collected through this website. Our registered address is 99 Ebbisham Rd, Epsom, Surrey KT18 7NS. You can contact us at <a href="mailto:info@progreenclean.co.uk" class="text-primary hover:underline">info@progreenclean.co.uk</a> or on <a href="tel:01372898732" class="text-primary hover:underline">01372 898732</a>.</p>
-        <h2 class="font-heading font-bold text-xl text-navy">2. What We Collect</h2>
-        <p>When you fill in a contact or quote form, we collect your name, email address, phone number, postcode and any additional details you choose to provide. We do not collect payment information through this website.</p>
-        <h2 class="font-heading font-bold text-xl text-navy">3. How We Use Your Data</h2>
-        <p>We use your information solely to respond to your enquiry, provide quotes, arrange cleaning services and communicate with you about your booking. We will never sell, rent or share your personal data with third parties for marketing purposes.</p>
+        <p>
+          ProGreen Clean Ltd (Company No. 16783547) is the data controller for
+          personal information collected through this website. Our registered
+          address is 99 Ebbisham Rd, Epsom, Surrey KT18 7NS. You can contact us
+          at <a
+            href="mailto:info@progreenclean.co.uk"
+            class="text-primary hover:underline">info@progreenclean.co.uk</a
+          > or on <a href="tel:07496413460" class="text-primary hover:underline"
+            >07496 413460</a
+          >.
+        </p>
+        <h2 class="font-heading font-bold text-xl text-navy">
+          2. What We Collect
+        </h2>
+        <p>
+          When you fill in a contact or quote form, we collect your name, email
+          address, phone number, postcode and any additional details you choose
+          to provide. We do not collect payment information through this
+          website.
+        </p>
+        <h2 class="font-heading font-bold text-xl text-navy">
+          3. How We Use Your Data
+        </h2>
+        <p>
+          We use your information solely to respond to your enquiry, provide
+          quotes, arrange cleaning services and communicate with you about your
+          booking. We will never sell, rent or share your personal data with
+          third parties for marketing purposes.
+        </p>
         <h2 class="font-heading font-bold text-xl text-navy">4. Legal Basis</h2>
-        <p>We process your data under legitimate interest (responding to your enquiry) and, where applicable, for the performance of a contract (delivering services you have booked).</p>
-        <h2 class="font-heading font-bold text-xl text-navy">5. Data Retention</h2>
-        <p>We keep your contact details for up to 24 months after your last interaction with us. If you become a regular customer, we retain your details for the duration of our working relationship plus 24 months.</p>
+        <p>
+          We process your data under legitimate interest (responding to your
+          enquiry) and, where applicable, for the performance of a contract
+          (delivering services you have booked).
+        </p>
+        <h2 class="font-heading font-bold text-xl text-navy">
+          5. Data Retention
+        </h2>
+        <p>
+          We keep your contact details for up to 24 months after your last
+          interaction with us. If you become a regular customer, we retain your
+          details for the duration of our working relationship plus 24 months.
+        </p>
         <h2 class="font-heading font-bold text-xl text-navy">6. Your Rights</h2>
-        <p>Under UK GDPR, you have the right to access, correct, delete or restrict processing of your personal data. You also have the right to data portability and to withdraw consent at any time. To exercise any of these rights, contact us at <a href="mailto:info@progreenclean.co.uk" class="text-primary hover:underline">info@progreenclean.co.uk</a>.</p>
-        <h2 class="font-heading font-bold text-xl text-navy">7. Third-Party Services</h2>
-        <p>This website is hosted on Netlify. Form submissions are processed through Netlify Forms. We use Google Maps for embedded maps. These services may process limited technical data (such as IP addresses) in accordance with their own privacy policies.</p>
+        <p>
+          Under UK GDPR, you have the right to access, correct, delete or
+          restrict processing of your personal data. You also have the right to
+          data portability and to withdraw consent at any time. To exercise any
+          of these rights, contact us at <a
+            href="mailto:info@progreenclean.co.uk"
+            class="text-primary hover:underline">info@progreenclean.co.uk</a
+          >.
+        </p>
+        <h2 class="font-heading font-bold text-xl text-navy">
+          7. Third-Party Services
+        </h2>
+        <p>
+          This website is hosted on Netlify. Form submissions are processed
+          through Netlify Forms. We use Google Maps for embedded maps. These
+          services may process limited technical data (such as IP addresses) in
+          accordance with their own privacy policies.
+        </p>
         <h2 class="font-heading font-bold text-xl text-navy">8. Security</h2>
-        <p>We take reasonable steps to protect your data, including using HTTPS encryption across the entire website. However, no method of electronic transmission is completely secure.</p>
-        <h2 class="font-heading font-bold text-xl text-navy">9. Changes to This Policy</h2>
-        <p>We may update this policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
+        <p>
+          We take reasonable steps to protect your data, including using HTTPS
+          encryption across the entire website. However, no method of electronic
+          transmission is completely secure.
+        </p>
+        <h2 class="font-heading font-bold text-xl text-navy">
+          9. Changes to This Policy
+        </h2>
+        <p>
+          We may update this policy from time to time. Any changes will be
+          posted on this page with an updated revision date.
+        </p>
         <h2 class="font-heading font-bold text-xl text-navy">10. Contact</h2>
-        <p>If you have any questions about this policy or your personal data, please contact us at <a href="mailto:info@progreenclean.co.uk" class="text-primary hover:underline">info@progreenclean.co.uk</a> or write to ProGreen Clean Ltd, 99 Ebbisham Rd, Epsom, Surrey KT18 7NS.</p>
+        <p>
+          If you have any questions about this policy or your personal data,
+          please contact us at <a
+            href="mailto:info@progreenclean.co.uk"
+            class="text-primary hover:underline">info@progreenclean.co.uk</a
+          > or write to ProGreen Clean Ltd, 99 Ebbisham Rd, Epsom, Surrey KT18 7NS.
+        </p>
       </div>
     </div>
   </section>
 </SiteLayout>
-

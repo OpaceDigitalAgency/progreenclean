@@ -7,24 +7,33 @@ interface Props {
 }
 
 const {
-  headline = 'Ready for a Sparkling Clean?',
-  text = 'Get your free, no-obligation quote in under two minutes. We cover Epsom, Ewell, Ashtead, Leatherhead, Banstead and the wider Surrey area.',
-  ctaText = 'Get Your Free Quote',
-  ctaHref = '/quote/',
+  headline = "Ready for a Sparkling Clean?",
+  text = "Get your free, no-obligation quote in under two minutes. We cover Epsom, Ewell, Ashtead, Leatherhead, Banstead and the wider Surrey area.",
+  ctaText = "Get Your Free Quote",
+  ctaHref = "/quote/",
 } = Astro.props;
 ---
-<section class="py-16 lg:py-20 bg-gradient-to-r from-primary to-secondary text-white">
+
+<section
+  class="py-16 lg:py-20 bg-gradient-to-r from-primary to-secondary text-white"
+>
   <div class="max-w-4xl mx-auto px-4 lg:px-8 text-center">
     <h2 class="font-heading font-bold text-3xl md:text-4xl mb-4">{headline}</h2>
     <p class="text-white/80 text-lg mb-8 max-w-2xl mx-auto">{text}</p>
     <div class="flex flex-wrap justify-center gap-4">
-      <a href={ctaHref} class="inline-block bg-accent hover:bg-accent-dark text-white font-heading font-bold px-8 py-4 rounded-full text-lg transition-colors shadow-lg focus:outline-2 focus:outline-white focus:outline-offset-2">
+      <a
+        href={ctaHref}
+        class="inline-block bg-accent hover:bg-accent-dark text-white font-heading font-bold px-8 py-4 rounded-full text-lg transition-colors shadow-lg focus:outline-2 focus:outline-white focus:outline-offset-2"
+      >
         {ctaText}
       </a>
-      <a href="tel:01372898732" class="inline-block border-2 border-white text-white font-heading font-bold px-8 py-4 rounded-full text-lg hover:bg-white/10 transition-colors focus:outline-2 focus:outline-white focus:outline-offset-2">
-        <span class="material-symbols-rounded align-middle mr-2">phone</span>01372 898732
+      <a
+        href="tel:07496413460"
+        class="inline-block border-2 border-white text-white font-heading font-bold px-8 py-4 rounded-full text-lg hover:bg-white/10 transition-colors focus:outline-2 focus:outline-white focus:outline-offset-2"
+      >
+        <span class="material-symbols-rounded align-middle mr-2">phone</span
+        >07496 413460
       </a>
     </div>
   </div>
 </section>
-

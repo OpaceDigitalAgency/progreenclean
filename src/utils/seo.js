@@ -32,7 +32,7 @@ export function generateMetaDescription(text, pathname) {
     "/services/":
       "Browse our full range of domestic and commercial cleaning services in Epsom and Surrey. Windows, gutters, carpets, ovens and more.",
     "/contact/":
-      "Get in touch with ProGreen Clean Ltd. Call 01372 898732 or visit us at 99 Ebbisham Rd, Epsom, KT18 7NS.",
+      "Get in touch with ProGreen Clean Ltd. Call 07496 413460 or visit us at 99 Ebbisham Rd, Epsom, KT18 7NS.",
     "/quote/":
       "Get an instant, no-obligation quote for professional cleaning services in Epsom and Surrey. Fast, simple, transparent pricing.",
   };
@@ -61,7 +61,7 @@ export function generateLocalBusinessSchema(aggregateRating = null) {
     "@id": `${SITE_URL}/#business`,
     name: "ProGreen Clean Ltd",
     image: `${SITE_URL}/og-default.jpg`,
-    telephone: "01372 898732",
+    telephone: "07496 413460",
     email: "info@progreenclean.co.uk",
     url: SITE_URL,
     address: {
@@ -93,6 +93,9 @@ export function generateLocalBusinessSchema(aggregateRating = null) {
       { "@type": "City", name: "Leatherhead" },
       { "@type": "City", name: "Banstead" },
       { "@type": "City", name: "Chessington" },
+      { "@type": "City", name: "New Malden" },
+      { "@type": "City", name: "Kingston" },
+      { "@type": "City", name: "Surbiton" },
     ],
     priceRange: "££",
   };

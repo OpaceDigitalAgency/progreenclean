@@ -31,6 +31,21 @@
     ]
   },
   {
+    "title": "Domestic Cleaning",
+    "slug": "domestic-cleaning",
+    "icon": "home",
+    "description": "Comprehensive indoor cleaning for a spotless home.",
+    "metaDescription": "Domestic cleaning services in Epsom & Surrey. Regular weekly cleans, one-off deep cleans and key holding. Fully insured, eco-friendly. From £20/hr.",
+    "longDescription": "Tailored home cleaning plans for busy households. Whether you need a regular weekly visit or a thorough one-off deep clean, our trained team covers kitchens, bathrooms, bedrooms and living areas.",
+    "price": "From £20/hr",
+    "faqs": [
+      { "question": "Can I book a regular weekly clean?", "answer": "Of course. We offer weekly, fortnightly and monthly packages to suit your schedule, all at competitive rates." },
+      { "question": "Do you bring your own products?", "answer": "Yes, we supply all eco-friendly cleaning products and equipment. If you prefer us to use specific products, just let us know." },
+      { "question": "Do you offer key holding?", "answer": "Yes. Many of our regular clients give us a spare key so we can clean while they are out. Keys are stored securely and insured." },
+      { "question": "What does a deep clean include?", "answer": "A deep clean covers everything from skirting boards and light switches to inside cupboards, appliances and behind furniture — every surface gets attention." }
+    ]
+  },
+  {
     "title": "Carpet Cleaning",
     "slug": "carpet-cleaning",
     "icon": "format_color_fill",
@@ -58,21 +73,6 @@
       { "question": "Are your products safe to use around food?", "answer": "Yes. We only use non-caustic, food-safe solutions. Your oven is ready to use as soon as we finish." },
       { "question": "How long does an oven clean take?", "answer": "A single oven typically takes one to two hours. Double ovens and range cookers take a little longer." },
       { "question": "Do you clean the extractor fan?", "answer": "Yes, extractor fan and filter cleaning is available as an add-on for a small extra charge." }
-    ]
-  },
-  {
-    "title": "Domestic Cleaning",
-    "slug": "domestic-cleaning",
-    "icon": "home",
-    "description": "Comprehensive indoor cleaning for a spotless home.",
-    "metaDescription": "Domestic cleaning services in Epsom & Surrey. Regular weekly cleans, one-off deep cleans and key holding. Fully insured, eco-friendly. From £20/hr.",
-    "longDescription": "Tailored home cleaning plans for busy households. Whether you need a regular weekly visit or a thorough one-off deep clean, our trained team covers kitchens, bathrooms, bedrooms and living areas.",
-    "price": "From £20/hr",
-    "faqs": [
-      { "question": "Can I book a regular weekly clean?", "answer": "Of course. We offer weekly, fortnightly and monthly packages to suit your schedule, all at competitive rates." },
-      { "question": "Do you bring your own products?", "answer": "Yes, we supply all eco-friendly cleaning products and equipment. If you prefer us to use specific products, just let us know." },
-      { "question": "Do you offer key holding?", "answer": "Yes. Many of our regular clients give us a spare key so we can clean while they are out. Keys are stored securely and insured." },
-      { "question": "What does a deep clean include?", "answer": "A deep clean covers everything from skirting boards and light switches to inside cupboards, appliances and behind furniture — every surface gets attention." }
     ]
   },
   {
